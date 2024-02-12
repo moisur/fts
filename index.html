@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mon Application</title>
 </head>
 <body>
-    <h1>Feroce tracking system</h1>
+    <input type="text" id="myInput" value="je vais bien">
+    <button onclick="myFunction()">Cliquez ici</button>
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+        var str = document.getElementById("myInput").value;
+        var result = '';
+        for (var i = 0; i < str.length; i++) {
+            result += str.substring(0, i+1) + '<br>';
+        }
+        document.getElementById("demo").innerHTML = result;
+    }
+    </script>
 </body>
 </html>
