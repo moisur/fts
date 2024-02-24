@@ -94,11 +94,15 @@ nav ul li a:hover {
 }
 
 #ils-temoignent {
-    margin-top: 50px; /* Espace entre la section précédente et celle-ci */
+    display: flex;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
+    justify-content: space-between;
+    align-items: center; /* Centre verticalement les éléments */
 }
 
 .temoignage {
-    margin-bottom: 30px; /* Espace entre les témoignages */
+    flex: 1; /* Chaque témoignage prend autant d'espace que possible */
+    text-align: center; /* Centre le contenu horizontalement */
 }
 
 .photo-ronde {
