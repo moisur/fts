@@ -65,12 +65,14 @@ nav ul li a:hover {
   background-image: url('https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg');
   background-size: cover;
   box-shadow: 0 6px 12px rgba(251, 211, 62, 0.3); /* Ombrage */
-  transition: box-shadow 0.3s ease; /* Transition pour l'effet d'ombrage */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition pour l'effet d'ombrage et 3D */
 }
 
 .custom-button:hover {
-  box-shadow: 0 8px 16px rgba(251, 211, 62, 0.3); /* Ombrage au survol */
-  transform: scale(1.1); /*Effet 3D au survol*/
+  box-shadow: 0 12px 24px rgba(251, 211, 62, 0.5); /* Ombrage au survol */
+  transform: scale(1.1); /* Effet 3D au survol */
+}
+
 }
 
 
