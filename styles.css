@@ -1,0 +1,46 @@
+/* Styles pour le menu de navigation */
+nav {
+    position: fixed; /* Fixer le menu en haut de la fenêtre */
+    top: 0; /* Le positionner en haut */
+    width: 100%; /* Largeur de 100% de la fenêtre */
+    background-color: #da1212; /* Couleur de fond */
+    z-index: 1000; /* S'assurer que le menu est au-dessus du contenu */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: blue;
+}
+
+/* Styles pour centrer verticalement le contenu */
+.container {
+    max-width: 800px;
+    margin: auto; /* Centrer horizontalement */
+    padding: 10px;
+    text-align: center; /* Aligner le contenu au centre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    min-height: auto; /* Assurer que la hauteur du contenu couvre la hauteur de la fenêtre */
+}
+
+/* Autres styles pour votre contenu */
