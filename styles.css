@@ -93,6 +93,23 @@ nav ul li a:hover {
   transform: scale(1.1); /* Effet 3D au survol */
 }
 
+#ils-temoignent {
+    margin-top: 50px; /* Espace entre la section précédente et celle-ci */
+}
+
+.temoignage {
+    margin-bottom: 30px; /* Espace entre les témoignages */
+}
+
+.photo-ronde {
+    border-radius: 50%; /* Rendre les photos rondes */
+    width: 150px; /* Ajustez la taille selon vos besoins */
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px; /* Centrez la photo */
+}
+
+
 
 
 
