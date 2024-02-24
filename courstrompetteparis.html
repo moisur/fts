@@ -129,9 +129,21 @@
     <p>Pour réserver un créneau dans l'agenda de nos professeurs et profiter du premier cours à 20 € c'est ici</p>
     <a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie" class="custom-button" target="_blank"></a>
     <!-- Début de widget de badge Calendly -->
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/freegeneration/lecoledes1-zonedegenie', text: 'Planifier du temps avec moi', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
+    <script type="text/javascript">
+      window.onload = function() {
+        Calendly.initBadgeWidget({
+          url: 'https://calendly.com/freegeneration/lecoledes1-zonedegenie',
+          text: 'Réservez votre appel découverte', // Texte personnalisé
+          color: '#4b4f52', // Couleur de fond personnalisée
+          textColor: '#ffffff', // Couleur du texte
+          branding: true
+        });
+      }
+    </script>  
+        
     <!-- Fin de widget de badge Calendly -->
 
 </body>
