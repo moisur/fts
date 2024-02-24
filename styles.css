@@ -57,4 +57,20 @@ nav ul li a:hover {
     font-size: 24px; /* Taille du texte */
     color: #fc9ae7; /* Couleur du texte */
 }
+.custom-button {
+  display: inline-block;
+  width: 100px; /* Largeur du bouton */
+  height: 100px; /* Hauteur du bouton */
+  border-radius: 50%; /* Pour rendre le bouton rond */
+  background-image: url('https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg');
+  background-size: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombrage */
+  transition: box-shadow 0.3s ease; /* Transition pour l'effet d'ombrage */
+}
+
+.custom-button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombrage au survol */
+}
+
+
 /* Autres styles pour votre contenu */
