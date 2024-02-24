@@ -80,7 +80,7 @@ nav ul li a:hover {
   width: 100px; /* Largeur du bouton */
   height: 100px; /* Hauteur du bouton */
   border-radius: 50%; /* Pour rendre le bouton rond */
-  background-image: url('https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg');
+  background-image: url('https://github.com/moisur/fts/blob/fbe15901ff7d0b9631ed0070e9a268abb83898f4/logo-nb-flou.png');
   background-size: cover;
   box-shadow: 0 6px 12px rgba(251, 211, 62, 0.3); /* Ombrage */
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition pour l'effet d'ombrage et 3D */
@@ -88,7 +88,7 @@ nav ul li a:hover {
 
 .whatsapp-button:hover img {
   /* BOUTON WHATSAPP HOVER */
-  background-image: url('https://github.com/moisur/fts/raw/ed3e4c42bc2be3128751cee9419f6405ab4152ee/logo-nb-flou.png'); /* Changement de l'image au survol */
+  background-image: url('https://github.com/moisur/fts/blob/fbe15901ff7d0b9631ed0070e9a268abb83898f4/logo-nb.png'); /* Changement de l'image au survol */
   box-shadow: 0 12px 24px rgba(251, 211, 62, 0.5); /* Ombrage au survol */
   transform: scale(1.1); /* Effet 3D au survol */
 }
