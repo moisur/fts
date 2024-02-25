@@ -12,8 +12,12 @@ body, html {
 .container {
     position: relative;
     text-align: center;
-    padding-top: 50px;
 }
+
+.form-container {
+    display: inline-block;
+}
+
 
 h1 {
     font-size: 36px;
@@ -28,9 +32,6 @@ h1 {
     max-width: 100%;
 }
 
-.form-container {
-    display: inline-block;
-}
 
 input[type="email"], input[type="text"] {
     padding: 10px;
@@ -38,8 +39,9 @@ input[type="email"], input[type="text"] {
     border: 3px solid black;
     border-radius: 10px;
     background: transparent;
-    width: 100%;
-    box-sizing: border-box;
+    width: min-content;
+    box-sizing: content-box;
+    text-align: center;
 }
 
 button {
@@ -89,41 +91,4 @@ button:hover {
     .telegram-button img {
         max-width: 100%;
     }
-    #countdown-container {
-  font-size: 20px;
-  text-align: center;
-}
-
-#countdown-text {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-#countdown-number {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-*
 }
