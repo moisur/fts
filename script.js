@@ -22,35 +22,30 @@ function startCountdown() {
 
 // Call the startCountdown function to begin the countdown
 startCountdown();
-
 // Fonction pour mettre à jour le compte à rebours
 function updateCountdown() {
-    // Date de fin du compte à rebours (à modifier selon vos besoins)
+    // Date de fin (1er mars)
     const endDate = new Date('2024-03-01T00:00:00');
-
+  
     // Date actuelle
     const now = new Date();
-
+  
     // Calcul de la différence entre la date de fin et la date actuelle
-    const timeDifference = endDate - now;
-
-    // Vérification si le temps restant est positif
-    if (timeDifference > 0) {
-        // Conversion du temps restant en heures, minutes et secondes
-        const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-        // Mise à jour du contenu de la balise span
-        document.getElementById('countdown-number').textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-        // Actualisation toutes les secondes
-        setTimeout(updateCountdown, 1000);
-    } else {
-        // Affichage d'un message lorsque le compte à rebours est terminé
-        document.getElementById('countdown-number').textContent = 'EXPIRÉ';
-    }
+    const difference = endDate - now;
+  
+    // Calcul des jours, heures, minutes et secondes restantes
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+    // Mise à jour de l'affichage du compte à rebours
+    const countdownElement = document.getElementById('countdown-number');
+    countdownElement.textContent = days + " jours, " + hours + " heures, " + minutes + " minutes, " + seconds + " secondes";
 }
 
-// Appel de la fonction pour initialiser le compte à rebours
+// Appeler la fonction updateCountdown pour mettre à jour le compte à rebours
 updateCountdown();
+
+// Mettre à jour le compte à rebours chaque seconde
+setInterval(updateCountdown, 1000);
