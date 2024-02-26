@@ -1,120 +1,113 @@
-/* Styles pour le menu de navigation */
-nav {
-    position: fixed; /* Fixer le menu en haut de la fenêtre */
-    top: 0; /* Le positionner en haut */
-    width: 100%; /* Largeur de 100% de la fenêtre */
-    background-color: #da1212; /* Couleur de fond */
-    z-index: 1000; /* S'assurer que le menu est au-dessus du contenu */
-}
-
-nav ul {
-    list-style: none;
+body {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: blue;
-}
-
-/* Styles pour centrer verticalement le contenu */
 .container {
-    max-width: 800px;
-    margin: auto; /* Centrer horizontalement */
-    padding: 10px;
-    text-align: center; /* Aligner le contenu au centre */
-    display: flex;
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    margin-bottom: -10%;
+}
+
+.image-container img {
+    width: 100vw; /* La largeur de l'image est égale à 100% de la largeur de la vue */
+    height: auto; /* Garantit que la hauteur s'ajuste proportionnellement à la largeur */
+    display: block;
+}
+
+.tweet-container img {
+    position: absolute;
+    max-width: 25%;
+    height: auto;
+    border-radius: 500px; /* Pour arrondir les coins */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2vw; /* Utilisation de vw (viewport width) pour la taille de police */
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+
+.title-container {
+    
+    position: absolute;
+    color: #4c7cc8;
+    font-size: 24px;
+    margin-top: 25%; /* Ajustez selon vos besoins */
+    width: 50%; /* 2/3 de la largeur de la page */
+    margin-left: 30.667%; /* Décalage pour centrer le texte */
+    text-align: center; /* Pour centrer le texte à l'intérieur de .title-container */
+
+}
+
+.jeudesmots {
+    position: absolute;
     flex-direction: column;
-    justify-content: center; /* Centrer verticalement */
-    align-items: center; /* Centrer horizontalement */
-    min-height: auto; /* Assurer que la hauteur du contenu couvre la hauteur de la fenêtre */
+    align-items: center;
+    margin-left: 50%; /* Espace entre l'entrée de texte et le bouton */
+
 }
 
-.banner {
-    background-color: #4b4f50; /* Couleur de fond pour le bandeau */
-    padding: 20px; /* Ajouter un peu de marge intérieure pour l'espace autour du contenu */
+.input-jeudesmots {
+    position: block;
+    align-items: center;
 }
 
-.banner img {
+.input-jeudesmots input {
+
+}
+
+.clickable-block {
+    padding: 10px 20px;
+    background-color: #4c7cc8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animation de transition */
+}
+
+.clickable-block:hover {
+    transform: translateY(-3px); /* Effet 3D lors du survol */
+}}
+
+.result-jeudesmots {
+}
+    
+.link-container {
+    margin-top: 38%; /* Espace entre l'entrée de texte et le bouton */
+
     display: block;
-    margin: 0 auto; /* Centre l'image horizontalement dans son conteneur */
+    justify-content: center; /* Espacement égal entre les éléments */
+    width: 50%; /* Largeur totale de la ligne */
+    
+    margin-left: auto; /* Centrage horizontal */
+    margin-right: auto; /* Centrage horizontal */
 }
 
-.titre {
-    font-size: 24px; /* Taille du texte */
-    color: #fc9ae7; /* Couleur du texte */
-}
-.custom-button {
-  display: inline-block;
-  width: 100px; /* Largeur du bouton */
-  height: 100px; /* Hauteur du bouton */
-  border-radius: 50%; /* Pour rendre le bouton rond */
-  background-image: url('https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg');
-  background-size: cover;
-  box-shadow: 0 6px 12px rgba(251, 211, 62, 0.3); /* Ombrage */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition pour l'effet d'ombrage et 3D */
+.clickable-block {
+    margin-top: 5%; /* Espace entre l'entrée de texte et le bouton */
+
+    padding: 10px 20px;
+    background-color: #4c7cc8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animation de transition */
+    text-align: center; /* Centrer le texte horizontalement */
+
 }
 
-.custom-button:hover {
-  box-shadow: 0 12px 24px rgba(251, 211, 62, 0.5); /* Ombrage au survol */
-  transform: scale(1.1); /* Effet 3D au survol */
+.clickable-block:hover {
+    transform: translateY(-10px); /* Effet 3D lors du survol */
 }
-
-
-/* Styles pour le bouton WhatsApp */
-.whatsapp-button {
-  display: inline-block;
-  width: 100px; /* Largeur du bouton */
-  height: 100px; /* Hauteur du bouton */
-  border-radius: 50%; /* Pour rendre le bouton rond */
-  background-image: url('https://github.com/moisur/fts/raw/fbe15901ff7d0b9631ed0070e9a268abb83898f4/logo-nb-flou.png');
-  background-size: cover;
-  box-shadow: 0 6px 12px rgba(251, 211, 62, 0.3); /* Ombrage */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition pour l'effet d'ombrage et 3D */
-}
-
-.whatsapp-button:hover {
-  /* BOUTON WHATSAPP HOVER */
-  background-image: url('https://github.com/moisur/fts/raw/fbe15901ff7d0b9631ed0070e9a268abb83898f4/logo-nb.png'); /* Changement de l'image au survol */
-  box-shadow: 0 12px 24px rgba(251, 211, 62, 0.5); /* Ombrage au survol */
-  transform: scale(1.1); /* Effet 3D au survol */
-}
-
-#ils-temoignent {
-    display: flex;
-    flex-wrap: nowrap; /* Empêche le retour à la ligne */
-    justify-content: space-between;
-    align-items: center; /* Centre verticalement les éléments */
-}
-
-.temoignage {
-    flex: 1; /* Chaque témoignage prend autant d'espace que possible */
-    text-align: center; /* Centre le contenu horizontalement */
-}
-
-.photo-ronde {
-    border-radius: 50%; /* Rendre les photos rondes */
-    width: 150px; /* Ajustez la taille selon vos besoins */
-    height: 150px;
-    display: block;
-    margin: 0 auto 10px; /* Centrez la photo */
-}
-
-
-
-
-
-/* Autres styles pour votre contenu */
