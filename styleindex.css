@@ -5,10 +5,10 @@ body {
 }
 
 #bandeau {
-    background-image: url('https://raw.githubusercontent.com/moisur/fts/main/Plan%20de%20travail%201.png');
-    background-size: cover;
+    background-image: url('https://raw.githubusercontent.com/moisur/fts/main/Plan%20de%20travail%201.png'), url('https://raw.githubusercontent.com/moisur/fts/main/421955564_10168427454160397_2303825426267203650_n.jpg');
+    background-size: contain, cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top left, center;
     width: 100%;
     height: 150px; /* Ajustez la hauteur selon vos besoins */
     position: relative;
