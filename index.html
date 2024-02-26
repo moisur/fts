@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mon Application</title>
-    <link rel="stylesheet" type="text/css" href="styleindex.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page responsive</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div id="bandeau">
-        <img src="https://raw.githubusercontent.com/moisur/fts/main/Plan%20de%20travail%201.png">
-        <h1>Bienvenu sur l'espace de présentation de mes activités et mes réalisations</h1>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/moisur/fts/main/banniere.png" alt="Bienvenue dans l'univers de JC">
+            <div class="overlay-text">
+                <h1>BIENVENUE DANS MON</h1>
+                <h1>UNIVERS</h1>
+            </div>
+        </div>
+        <div class="tweet-container">
+            <img src="https://raw.githubusercontent.com/moisur/fts/main/Plan%20de%20travail%201.png" alt="Imbriquée comme dans Twitter">
+        </div>
+        
+        <h1 class="title-container">
+            JE SUIS JC <br> J'ai 38 ans, et vous découvrirez <br>sur cette page tous mes projets en cours
+        </h1>
+    
+       
     </div>
-    <a href="courstrompetteparis.html">Cours de Trompette à Paris</a>
-    <a href="LandingPage-FREEBIE">Les cadeaux Monétisation d'audience</a>
-    <input type="text" id="myInput" value="je vais bien">
-    <button onclick="myFunction()">Cliquez ici</button>
-    <p id="demo"></p>
-
+    <div class="jeudesmots">
+        <div class="input-jeudesmot">
+            <input type="text" id="myInput" value="je vais bien">
+            <button onclick="myFunction()">Cliquez ici</button>
+        </div>
+        <div class="result-jeudesmots">
+            <p id="demo"></p>
+        </div>
+    </div>  
+    <div class="link-container">
+        <a href="courstrompetteparis.html">
+            <div class="clickable-block">Cours de Trompette à Paris 75011</div>
+        </a>
+        <a href="LandingPage-FREEBIE.html">
+            <div class="clickable-block">Rejoins ma Newletter</div>
+        </a>
+    </div>  
     <script>
-    function myFunction() {
+        function myFunction() {
         var str = document.getElementById("myInput").value;
         var result = '';
         for (var i = 0; i < str.length; i++) {
@@ -27,3 +55,4 @@
     </script>
 </body>
 </html>
+
