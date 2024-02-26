@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    margin-bottom: -10%;
+}
+
+.image-container img {
+    width: 100vw; /* La largeur de l'image est égale à 100% de la largeur de la vue */
+    height: auto; /* Garantit que la hauteur s'ajuste proportionnellement à la largeur */
+    display: block;
+}
+
+.tweet-container img {
+    position: absolute;
+    max-width: 25%;
+    height: auto;
+    border-radius: 500px; /* Pour arrondir les coins */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2vw; /* Utilisation de vw (viewport width) pour la taille de police */
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+
+.title-container {
+    
+    position: absolute;
+    color: #4c7cc8;
+    font-size: 24px;
+    margin-top: 25%; /* Ajustez selon vos besoins */
+    width: 50%; /* 2/3 de la largeur de la page */
+    margin-left: 30.667%; /* Décalage pour centrer le texte */
+    text-align: center; /* Pour centrer le texte à l'intérieur de .title-container */
+
+}
+
+.jeudesmots {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50%; /* Espace entre l'entrée de texte et le bouton */
+
+}
+
+.input-jeudesmots {
+    position: block;
+    align-items: center;
+}
+
+.input-jeudesmots input {
+
+}
+
+.clickable-block {
+    padding: 10px 20px;
+    background-color: #4c7cc8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animation de transition */
+}
+
+.clickable-block:hover {
+    transform: translateY(-3px); /* Effet 3D lors du survol */
+}}
+
+.result-jeudesmots {
+}
+    
+.link-container {
+    margin-top: 38%; /* Espace entre l'entrée de texte et le bouton */
+
+    display: block;
+    justify-content: center; /* Espacement égal entre les éléments */
+    width: 50%; /* Largeur totale de la ligne */
+    
+    margin-left: auto; /* Centrage horizontal */
+    margin-right: auto; /* Centrage horizontal */
+}
+
+.clickable-block {
+    margin-top: 5%; /* Espace entre l'entrée de texte et le bouton */
+
+    padding: 10px 20px;
+    background-color: #4c7cc8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animation de transition */
+    text-align: center; /* Centrer le texte horizontalement */
+
+}
+
+.clickable-block:hover {
+    transform: translateY(-10px); /* Effet 3D lors du survol */
+}
