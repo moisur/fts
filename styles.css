@@ -1,184 +1,169 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours de Trompette à Paris</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers votre fichier CSS externe -->
-</head>
-<body>
-    <!-- NOUS LE CONTEXTE DE LECOLE //  REVE -->
-    <nav>
-        <ul>
-            <li class="block-1"><a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie">Prendre rendez-vous <br> en ligne</a></li>
-            <li class="block-2"><img src="https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg" alt="Miniature" class="thumbnail"></li>
-            <li class="block-3"><a href="https://wa.me/33663738902?text=Bonjour%2C%20je%20suis%20tombé%20sur%20votre%20site%20web%2C%20j'aimerais%20en%20savoir%20plus%2C%20quand%20seriez-vous%20disponible%20pour%20échanger%20%3F">Envoyer <br>un message whatsapp</a></li>
-        </ul>
-    </nav>
+
+/* Style général du menu de navigation */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 22vh; /* 10% de la hauteur de l'écran */
+    background-color: #4b4f50;
+    z-index: 1000;
+}
+
+/* Style des éléments de la liste */
+nav ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Style des blocs */
+nav ul li {
+    position: absolute;
+    display: flex; align-items: center;
+}
+
+/* Style du premier sous-bloc */
+nav ul li.block-1 {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+/* Style de l'image */
+nav ul li.block-2 img.thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Style des liens */
+nav ul li a {
     
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #36c5c1;
+    font-weight: bold;
+    font-size: 3em; /* Taille de police par défaut */
+    transition: all 0.3s ease;
+}
 
-    <!-- Contenu de la page -->
-    <div class="container">
-        <div class="banner">
-            <h1 class="titre">Cours de Trompette à Paris</h1>
-            <p style="color: #fc9ae7;">Bienvenue dans notre école de trompette à Paris, où vous pouvez apprendre à jouer de la trompette avec passion et talent.</p>
-        </div>
-        <div class="container">
-                <p>Pour réserver directement un créneau dans l'agenda de nos professeurs et profiter du premier cours à 20 € c'est ici</p>
-                <a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie" class="custom-button" target="_blank"></a>
-
-            <h1 >Maîtrisez la Trompette avec Facilité à Paris</h1>
-            <h2 id="frustration">Êtes-vous frustré par les défis de l'apprentissage de la trompette ?</h2>
-            
-            <div class="container">
-                    <p><strong>Débutant Déconcerté</strong><br>Vous venez de commencer votre voyage musical, mais vous vous sentez perdu dans le labyrinthe des notes et des techniques de la trompette ?<br><br></p>
-                    <p><strong>Pratique Stagnante</strong><br>Malgré des heures de pratique, vous constatez peu ou pas de progrès dans votre jeu de trompette ?<br><br></p>
-                    <p><strong>Confusion Technique</strong><br>Les embouchures, les gammes et les doigtés semblent être en langage codé, difficile à décrypter ?<br><br></p>
-                    <h2 id="solution">Découvrez notre École de Trompette à Paris - Votre Solution à Tous ces Problèmes !</h2>
-                    <p><strong>Expertise Pédagogique</strong><br>Nos instructeurs expérimentés vous guideront pas à pas, de la maîtrise des bases aux techniques avancées, en rendant chaque étape de votre apprentissage claire et accessible.<br><br></p>
-                    <p><strong>Cours Personnalisés</strong><br>Oubliez les méthodes génériques ! Nous adaptons nos cours à votre rythme d'apprentissage unique, vous permettant de progresser à votre propre vitesse sans jamais vous sentir dépassé.<br><br></p>
-                    <p><strong>Motivation Continue</strong><br>Notre environnement d'apprentissage positif et encourageant vous inspirera à rester motivé et concentré sur votre voyage musical, vous aidant à dépasser les plateaux et à atteindre de nouveaux sommets de maîtrise.<br><br></p>
-                </div>
-        </div>
-
-        <h2 id="join-us">Ne laissez pas les défis de la trompette vous arrêter<br><br>Joignez-vous à nous et libérez votre talent musical !</h2>
-        <h2 id="intro">Contact</h2>
-        <p>N'hésitez pas à nous contacter pour plus d'informations :</p>
-        <!-- Début de widget de lien Calendly -->
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/freegeneration/lecoledes1-zonedegenie'});return false;">Réservez votre appel de découverte</a>
-        <!-- Fin de widget de lien Calendly -->
-
-        
-        <p>Pour réserver directement un créneau dans l'agenda de nos professeurs et profiter du premier cours à 20 € c'est ici</p>
-        <a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie" class="custom-button" target="_blank"></a>
-
-        
-        <!-- REFOCUS SUR CE QUIL VEUT CHERCHER A OUI UN COURS DE TROMPETTE, LE PROFESSEUR DE TROMPETTE -->
-        <h2>Qui est votre prochain professeur ?</h2>
-        <p><span style="font-size: 18px;">Salut &#128075 je suis JC, fondateur de l'école des 1%.</span></p>
-        <p><span style="font-size: 18px;">L'école des 1% est basée sur la découverte de votre zone de génie</span></p>
+/* Style au survol des liens */
+nav ul li a:hover {
+    cursor: pointer;
+    font-size: 303%; /* Grossissement de 5% */
+    color: #f9dfa4;
+    box-shadow: 0 0 300px #36c5c1; /* Ajout de l'ombre */
+    border: 3px solid #f9dfa4; /* Ajout du contour de 3 pixels */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ajout du contour de texte */
+    box-shadow: #f9dfa4; /* Aucune ombre affichée */
+    -webkit-transition: text-shadow 0.3s ease; /* Transition pour text-shadow sur navigateurs WebKit */
+    transition: text-shadow 0.3s ease; /* Transition pour text-shadow */
 
 
-        <p><strong><span style="font-size: 18px;">Trompettiste depuis 20 ans, j'ai étudié toutes les facettes de l'apprentissage de la trompette.</span></strong></p>
-
-        <p><span style="font-size: 18px;">J'ai cherché des années avant de créer ma propre méthode, celle qui permet à mes élèves de progresser rapidement, simplement et d'obtenir des résultats extraordinaires.</span></p>
-
-        <p><span style="font-size: 18px;">J'ai étudié toutes les techniques possibles et imaginables, Arban, Balay, Van de Velde, Collin et bien d'autres.</span></p>
-
-        <p><span style="font-size: 18px;">J'ai exploré nombres de méthodes en ligne, mais à chaque fois, il me manquait quelque chose...</span></p>
-
-        <p><span style="font-size: 18px;">Et aujourd'hui, j'ai trouvé ! J'ai fondé ma propre école, mon propre courant de pensée basée sur la découverte de votre zone de génie.</span></p>
-
-        <p><span style="font-size: 18px;">Et j'observe des résultats fantastiques. En quelques mois, mes élèves montrent des progrès remarquables</span></p>
-
-        <p><span style="font-size: 18px;">Aujourd'hui j'ai décidé de partager cette méthode au plus grand nombre. Ma méthode, basée sur la connaissance de soi, l'explosivité et la zenitude.</span></p>
-
-        <p><strong><span style="font-size: 20px;">100% inédite.</span></strong></p>
-
-        <p><strong><span style="font-size: 20px;">100% efficace !</span></strong></p>
-
-        <p><span style="font-size: 18px;">Je vous donne mes secrets pour atteindre un jeu fluide, des résultats rapides et mesurables.</span></p>
-
-        <p><span style="font-size: 18px;">Je suis débutant, est-ce que c'est fait pour moi ?</span></p>
-        <p><span style="font-size: 18px;">Lors de votre premier cours nous définirons vos objectifs et vous découvrirez les secret de la méthode de la découverte de sa zone de génie</span></p>
-
-        <p><span style="font-size: 18px;">Vous allez apprendre petit à petit et sur un timing précis  à faire ce qu'il faut quand il faut !</span></p>
-
-        <p><span style="font-size: 18px;">Si j'ai déjà joué d'un instrument ?</span></p>
-        <p><span style="font-size: 18px;">C'est encore mieux !</span></p>
-        
-
-        <p><span style="font-size: 18px;">N'hésitez plus, contactez-moi. Je vais vous accompagner jusqu'à votre plus belle réussite.</span></p>
+}
 
 
-        <h2>Localisation</h2>
-        <p>Contactez nous pour connaitre notre adresse</p>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.128180575377!2d2.371450315679026!3d48.85738817928877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6712c7c7e8015%3A0xd2bb62890b64a422!2s11%C3%A8me%20arrondissement%2C%20Paris%2C%20France!5e0!3m2!1sfr!2sfr!4v1645159794518!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <title>Zone de Génie en Trompette</title>
-</head>
-<body>
-    <h1 style="background-color: #4b4f50; color: #fbdc43;>Zone de Génie en Trompette</h1>
-
-    <p>Vous voulez apprendre la trompette ?<br><br>Vous êtes bloqués dans votre progression et les aigus sont difficiles à atteindre ?</p>
-
-    <p>J'ai créé la méthode Zone 2 Génie qui vous permet d'atteindre des résultats extraordinaires en très peu de temps.</p>
-
-    <p>Certains de mes élèves réussissent à maîtriser une production de son parfaite en moins de 3 mois grâce à mon enseignement.</p>
-
-    <p>Posture, souffle, explosivité et rigueur n'auront bientôt plus aucun secret pour vous.</p>
-
-    <p>Nous étudions le solfège et l'improvisation, étape par étape, pour construire ensemble votre réussite.</p>
-
-    <p>Que ce soit dans le jazz, le reggae, la chanson française ou la musique classique, je vous accompagne dans tous les domaines de votre musicalité pour laisser votre meilleure fibre artistique vibrer au TOP !</p>
-
-    <p>Vous cherchez le meilleur professeur ? <br> Celui qui vous accompagnera et vous fera progresser rapidement ?</p>
-
-    <p>N'hésitez plus !<br>Je suis LE professeur dont vous avez besoin !</p>
-    <h2>Exploration musicale</h2>
-    <p>Dans la zone de génie en trompette, <br> les musiciens sont encouragés à explorer de nouveaux horizons musicaux. Que ce soit en improvisant sur des standards de jazz, en interprétant des œuvres classiques ou en expérimentant avec des styles contemporains, la trompette offre une palette sonore infinie à découvrir.</p>
-    
-    <h2>Maîtrise technique</h2>
-    <p>La maîtrise technique est un élément essentiel de la zone de génie en trompette. <br> Les musiciens s'efforcent constamment d'améliorer leur technique de jeu, que ce soit en travaillant leur son, leur articulation, leur gamme ou leur agilité. Une solide technique permet aux musiciens d'exprimer pleinement leur créativité.</p>
-    
-    <h2>Expression personnelle</h2>
-    <p>Enfin, la zone de génie en trompette est un espace d'expression personnelle où chaque musicien peut trouver sa voix unique. Que ce soit à travers l'interprétation émotionnelle d'une ballade, l'improvisation audacieuse d'un solo ou la composition de sa propre musique, la trompette offre aux musiciens un moyen puissant de s'exprimer et de communiquer avec leur public.</p>
-    <h2>Ne laissez pas les défis de la trompette vous arrêter<br><br>Joignez-vous à nous et libérez votre talent musical !</h2>
-
-    <section id="ils-temoignent" style="display: flex; justify-content: space-between;">
-        <h2>Ils Témoignent</h2>
-        <div class="temoignage">
-            <img src="https://raw.githubusercontent.com/moisur/fts/main/2024-02-21_12-32-48_5960.png" alt="Cours trompette Paris -Photo témoignage 1" class="photo-ronde">
-            <p>Coucou, c'est Nabila. Les cours de JC sont TOP !</p>
-        </div>
-        <div class="temoignage">
-            <img src="https://raw.githubusercontent.com/moisur/fts/2a624f3ffdce646f96b637be724521c6b60e0ee2/2024-02-21_12-47-00_3915.png" alt="Cours trompette Paris -Photo témoignage 1" class="photo-ronde">
-            <p>Depuis que mon fils prend des cours avec JC, mes oreilles sont soulagées.</p>
-        </div>
-        <div class="temoignage">
-            <img src="https://raw.githubusercontent.com/moisur/fts/main/2024-02-21_13-00-52_9771.png" alt="Cours trompette Paris -Photo témoignage 1" class="photo-ronde">
-            <p>J'adore faire de la trompette avec le professeur JC.</p>
-        </div>
-    </section>
+/* Style général de la section */
+#ils-temoignent {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
 
 
 
-    <h2>Contact</h2>
-    <p>N'hésitez pas à nous contacter pour plus d'informations :</p>
-    <!-- Début de widget de lien Calendly -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/freegeneration/lecoledes1-zonedegenie'});return false;">Réservez votre appel de découverte</a>
-    <!-- Fin de widget de lien Calendly -->
-    
-    <p>Pour réserver un créneau dans l'agenda de nos professeurs et profiter du premier cours à 20 € c'est ici</p>
-    <a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie" class="custom-button" target="_blank"></a>
-    <!-- Début de widget de badge Calendly -->
+/* Styles pour centrer verticalement le contenu */
+.container {
+    margin: 22vh;
 
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">
-      window.onload = function() {
-        Calendly.initBadgeWidget({
-          url: 'https://calendly.com/freegeneration/lecoledes1-zonedegenie',
-          text: 'Réservez votre appel découverte', // Texte personnalisé
-          color: '#4b4f52', // Couleur de fond personnalisée
-          textColor: '#ffffff', // Couleur du texte
-          branding: true
-        });
-      }
-    </script>  
-        
-    <!-- Fin de widget de badge Calendly -->
+    max-width: 800px;
+    margin: auto; /* Centrer horizontalement */
+    padding: 10px;
+    text-align: center; /* Aligner le contenu au centre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    min-height: auto; /* Assurer que la hauteur du contenu couvre la hauteur de la fenêtre */
+}
 
-</body>
-</html>
+.banner {
+    background-color: #4b4f50; /* Couleur de fond pour le bandeau */
+    padding: 20px; /* Ajouter un peu de marge intérieure pour l'espace autour du contenu */
+}
 
-    </div>
+.banner img {
+    display: block;
+    margin: 0 auto; /* Centre l'image horizontalement dans son conteneur */
+}
 
-    
-    
+.titre {
+    font-size: 24px; /* Taille du texte */
+    color: #fc9ae7; /* Couleur du texte */
+}
+.custom-button {
+  width: 100px; /* Largeur du bouton */
+  height: 100px; /* Hauteur du bouton */
+  border-radius: 50%; /* Pour rendre le bouton rond */
+  background-image: url('https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg');
+  background-size: cover;
+  box-shadow: 0 6px 12px rgba(251, 211, 62, 0.3); /* Ombrage */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition pour l'effet d'ombrage et 3D */
+}
+
+.custom-button:hover {
+  box-shadow: 0 12px 24px rgba(251, 211, 62, 0.5); /* Ombrage au survol */
+  transform: scale(1.1); /* Effet 3D au survol */
+}
+
+
+/* Styles pour le bouton WhatsApp */
+.whatsapp-button {
+  display: inline-block;
+  width: 100px; /* Largeur du bouton */
+  height: 100px; /* Hauteur du bouton */
+  border-radius: 50%; /* Pour rendre le bouton rond */
+  background-image: url('https://github.com/moisur/fts/raw/fbe15901ff7d0b9631ed0070e9a268abb83898f4/logo-nb-flou.png');
+  background-size: cover;
+  box-shadow: 0 6px 12px rgba(251, 211, 62, 0.3); /* Ombrage */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition pour l'effet d'ombrage et 3D */
+}
+
+.whatsapp-button:hover {
+  /* BOUTON WHATSAPP HOVER */
+  background-image: url('https://github.com/moisur/fts/raw/fbe15901ff7d0b9631ed0070e9a268abb83898f4/logo-nb.png'); /* Changement de l'image au survol */
+  box-shadow: 0 12px 24px rgba(251, 211, 62, 0.5); /* Ombrage au survol */
+  transform: scale(1.1); /* Effet 3D au survol */
+}
+
+#ils-temoignent {
+    display: flex;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
+    justify-content: space-between;
+    align-items: center; /* Centre verticalement les éléments */
+}
+
+.temoignage {
+    flex: 1; /* Chaque témoignage prend autant d'espace que possible */
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+.photo-ronde {
+    border-radius: 50%; /* Rendre les photos rondes */
+    width: 150px; /* Ajustez la taille selon vos besoins */
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px; /* Centrez la photo */
+}
+
+
+
+
+
+/* Autres styles pour votre contenu */
