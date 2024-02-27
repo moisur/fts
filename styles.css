@@ -23,7 +23,7 @@ nav ul {
 
 /* Style des blocs */
 nav ul li {
-    position: absolute;
+    position: relative;
     display: flex; align-items: center;
 }
 
