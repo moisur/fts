@@ -1,4 +1,51 @@
-
+.merriweather-light {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .merriweather-light-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .merriweather-regular-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .merriweather-bold-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .merriweather-black-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
 /* Style général du menu de navigation */
 nav {
     position: fixed;
@@ -31,6 +78,8 @@ nav ul li {
 
 /* Style du premier sous-bloc */
 nav ul li.block-1 {
+    font-family: "Merriweather", serif;
+
     margin: 0;
     padding: 0;
     justify-content: center;
@@ -55,6 +104,8 @@ nav ul li.block-2 img.thumbnail {
 
 /* Style du deuxieme sous-bloc */
 nav ul li.block-3 {
+    font-family: "Merriweather", serif;
+
     margin: 0;
     padding: 0;
     justify-content: center;
@@ -63,6 +114,8 @@ nav ul li.block-3 {
 /* Style des liens */
 nav ul li a {
     
+    font-family: "Merriweather", serif;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,12 +144,16 @@ nav ul li a:hover {
 
 /* Style général de la section */
 #ils-temoignent {
+    font-family: "Merriweather", serif;
+
     position: relative;
     display: flex;
     justify-content: space-between;
 }
 
 .container {
+    font-family: "Merriweather", serif;
+
     max-width: 800px;
     margin: auto; /* Centrer horizontalement */
     padding: 0px;
@@ -110,10 +167,14 @@ nav ul li a:hover {
 
 
 .titre {
+    font-family: "Merriweather", serif;
+
     font-size: 24px; /* Taille du texte */
     color: #fc9ae7; /* Couleur du texte */
 }
 .custom-button {
+  font-family: "Merriweather", serif;
+
   width: 100px; /* Largeur du bouton */
   height: 100px; /* Hauteur du bouton */
   border-radius: 50%; /* Pour rendre le bouton rond */
@@ -149,6 +210,8 @@ nav ul li a:hover {
 }
 
 #ils-temoignent {
+    font-family: "Merriweather", serif;
+
     display: flex;
     flex-wrap: nowrap; /* Empêche le retour à la ligne */
     justify-content: space-between;
