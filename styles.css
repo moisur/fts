@@ -25,6 +25,8 @@ nav ul {
 nav ul li {
     position: relative;
     display: flex; align-items: center;
+    flex-grow: 1; /* Permet aux éléments de remplir l'espace restant */
+
 }
 
 /* Style du premier sous-bloc */
@@ -34,10 +36,28 @@ nav ul li.block-1 {
     justify-content: center;
 }
 
+
+
+/* Style du deuxieme sous-bloc */
+nav ul li.block-2 {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
 /* Style de l'image */
 nav ul li.block-2 img.thumbnail {
     max-width: 100%;
     max-height: 100%;
+}
+
+
+/* Style du deuxieme sous-bloc */
+nav ul li.block-3 {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
 }
 
 /* Style des liens */
