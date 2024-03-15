@@ -45,3 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// EMPECHER LA DOUBLE LECTURE DE VIDEO
+    document.addEventListener('DOMContentLoaded', function() {
+        const videos = document.querySelectorAll('video');
+
+        videos.forEach(video => {
+            video.addEventListener('play', function(event) {
+                // Pause toutes les autres vidéos sauf celle qui est en cours de lecture
+                videos.forEach(v => {
+                    if (v !== event.target) {
+                        v.pause();
+                    }
+                });
+            });
+        });
+    });
+
