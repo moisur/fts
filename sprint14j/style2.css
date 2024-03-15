@@ -1,0 +1,313 @@
+/* Réinitialisation des styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base */
+body {
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+header h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.image-container {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  max-width: 100%; /* Redimensionner l'image pour s'adapter au conteneur */
+
+}
+
+.image-container img {
+  max-width: 100%; /* Redimensionner l'image pour s'adapter au conteneur */
+  height: auto; /* Ajuster la hauteur automatiquement pour préserver les proportions */
+}
+
+.text-container {
+    max-width: 100%; /* Redimensionner l'image pour s'adapter au conteneur */
+
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+}
+
+.text-content {
+  text-align: center; /* Centrer le texte à l'intérieur du conteneur */
+}
+/* Styles pour les sections avec image et texte */
+.image-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-block {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-block {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.image-block img {
+  width: 100%;
+  border-radius: 15%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+.text-block p {
+  margin: 10px 0;
+}
+
+/* Styles pour les boutons d'appel à l'action */
+.cta-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta-text {
+  font-weight: bold;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0 10px;
+}
+
+.cta-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Styles pour l'en-tête */
+header {
+  background-color: #256c8a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #63b0b9;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #256c8a;
+}
+
+/* Styles pour les sections */
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  color: #256c8a;
+  margin-bottom: 20px;
+}
+
+/* Styles pour la section de témoignages */
+.testimonials {
+  background-color: #e0b31e;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.testimonials h2 {
+  color: #fff;
+}
+
+.testimonial-bubble {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  display: inline-block;
+  position: relative;
+}
+
+.testimonial-bubble:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: #fff;
+}
+
+.testimonial-bubble img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial-bubble p {
+  margin-bottom: 10px;
+}
+
+.testimonial-bubble cite {
+  font-style: italic;
+}
+
+/* Styles pour les vidéos */
+.video-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.video-column {
+  flex: 1;
+  margin: 0 10px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Styles pour les FAQ */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.faq-question {
+  background-color: #63b0b9; /* Changement de couleur */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.faq-question h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff; /* Changement de couleur */
+}
+
+.faq-answer {
+  padding: 10px;
+  display: none;
+  background-color: #f1f1f1; /* Changement de couleur */
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 16px;
+  color: #333; /* Changement de couleur */
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-question h2 i {
+  float: right;
+}
+
+.faq-question h2 i.fa-caret-down {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question h2 i.fa-caret-down {
+  transform: rotate(180deg);
+}
+
+.trusted-partners h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+.trusted-partners {
+  background-color: #fff; /* Fond blanc */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Pour éviter que les logos débordent */
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.partner-logos img {
+  max-width: 100px; /* Taille maximale des logos */
+  height: auto;
+  margin: 10px; /* Espacement entre les logos */
+}
