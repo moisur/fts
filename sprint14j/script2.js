@@ -24,3 +24,24 @@ window.addEventListener('scroll', function () {
         }
     });
 });
+
+// mouvement de la petite flèche des FAQ
+document.addEventListener('DOMContentLoaded', function () {
+    var faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(function(faqQuestion) {
+        faqQuestion.addEventListener('click', function () {
+            var arrowIcon = this.querySelector('.arrow-icon');
+            var rotated = arrowIcon.classList.contains('rotated');
+
+            if (rotated) {
+                arrowIcon.style.transform = 'rotateX(180deg)'; // Rotation vers le haut
+            } else {
+                arrowIcon.style.transform = 'rotateY(180deg)'; // Rotation vers le bas
+            }
+
+            arrowIcon.classList.toggle('rotated'); // Inverser la classe rotated
+        });
+    });
+});
+
