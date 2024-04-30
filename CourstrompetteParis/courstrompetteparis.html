@@ -1,252 +1,379 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap">
-<title>Mon Site Web</title>
-<style>
-    body, html {
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Menu */
-    .menu {
-      height: 10vh;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: height 0.5s ease-in-out;
-    }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Leçons de Trompette avec JC - Maître Passionné</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+ <style>
+   body {
+     font-family: 'Montserrat', sans-serif;
+     margin: 0;
+     padding: 0;
+     overflow-x: hidden;
+   }
 
-    .menu ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+   header {
+     background-color: #333;
+     color: #fff;
+     padding: 20px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 1000;
+   }
 
-    .menu ul li {
-      margin: 0 10px;
-      flex-grow: 1;
-    }
+   nav ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+   }
 
-    .menu ul li a {
-      text-decoration: none;
-      color: #36c5c1;
-      font-weight: bold;
-      font-size: 2em;
-      font-family: "Merriweather", serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
+   nav ul li {
+     margin-right: 20px;
+   }
 
-    /* Style au survol des liens */
-    .menu ul li a:hover {
-      cursor: pointer;
-      font-size: 203%;
-      color: #f9dfa4;
-      box-shadow: 0 0 300px #36c5c1;
-      border: 3px solid #f9dfa4;
-      text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-      -webkit-transition: text-shadow 0.3s ease;
-      transition: text-shadow 0.3s ease;
-    }
+   nav ul li a {
+     color: #fff;
+     text-decoration: none;
+     transition: color 0.3s ease;
+   }
 
-    /* Fonts */
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l521wRpXw.ttf");
-      font-weight: 300;
-      font-style: normal;
-    }
+   nav ul li a:hover {
+     color: #ffc107;
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5Z1wRpXw.ttf");
-      font-weight: 400;
-      font-style: normal;
-    }
+   .hero {
+     height: 100vh;
+     background: linear-gradient(135deg, #ffc107, #ff9800);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l52xwRpXw.ttf");
-      font-weight: 700;
-      font-style: normal;
-    }
+   .hero-content {
+     text-align: center;
+     color: #fff;
+     z-index: 1;
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5-3wRpXw.ttf");
-      font-weight: 900;
-      font-style: normal;
-    }
+   .hero-title {
+     font-size: 4rem;
+     margin-bottom: 20px;
+     opacity: 0;
+     animation: fadeInUp 1s ease forwards;
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5X3wRpXw.ttf");
-      font-weight: 300;
-      font-style: italic;
-    }
+   .hero-subtitle {
+     font-size: 2rem;
+     margin-bottom: 40px;
+     opacity: 0;
+     animation: fadeInUp 1s ease 0.5s forwards;
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5Y3wRpXw.ttf");
-      font-weight: 400;
-      font-style: italic;
-    }
+   .typed-cursor {
+     font-size: 2rem;
+     opacity: 1;
+     animation: blink 0.7s infinite;
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l52xwRpXw.ttf");
-      font-weight: 700;
-      font-style: italic;
-    }
+   @keyframes blink {
+     0% { opacity: 1; }
+     50% { opacity: 0; }
+     100% { opacity: 1; }
+   }
 
-    @font-face {
-      font-family: "Merriweather";
-      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5-3wRpXw.ttf");
-      font-weight: 900;
-      font-style: italic;
-    }
-    #menu-container {
-
-        height: 22vh;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    #menu {
-        background-color: #4b4f50;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 22vh%;
-        max-height: 507px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .button {
-        border: 0; /* Supprimer la bordure initiale */
-
-        text-decoration: none;
-        color: #36c5c1;
-        font-weight: bold;
-        font-size: 2em;
-        font-family: "Merriweather", serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        text-align: center; /* Centrer le texte horizontalement */
-        padding: 10px 20px; /* Ajuster le padding pour rapprocher le texte du bord */
-}
-      /* Animation */
-  .button a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background-color: #f88913; /* Couleur de l'animation */
-    opacity: 0.5; /* Opacité de l'animation */
-    transition: width 0.3s ease, height 0.3s ease;
-  }
-
-  .button a:hover::before {
-    width: 100%;
-    height: 100%;
-  }
+   .trumpet-animation {
+     position: absolute;
+     width: 100%;
+     max-width: 800px;
+   }
 
 
+   .section {
+     padding: 100px 20px;
+   }
 
-.button:hover {
-  cursor: pointer;
-  font-size: 203%;
-  color: #f9dfa4;
-  box-shadow: 0 0 300px #36c5c1;
-  border: 3px solid #f9dfa4;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Réduire la distance de l'ombre */
-  -webkit-transition: text-shadow 0.3s ease;
-  transition: text-shadow 0.3s ease;
-}
-    
-    #image-container {
-        text-align: center;
-    }
-    #image-container img {
-        max-width: 100%;
-        height: auto;
-    }
-    #text-container {
-        text-align: center;
-        font-size: 203%;
-        font-family: "Merriweather";
+   .section-header {
+     text-align: center;
+     margin-bottom: 40px;
+   }
 
-        margin-top: 307px; /* pour compenser la hauteur du menu */
-        position: relative; /* Ajout de la position relative */
-        z-index: 2; /* Définition d'un z-index plus élevé pour le conteneur texte */
+   .section-header h2 {
+     font-size: 3rem;
+     margin-bottom: 20px;
+     position: relative;
+     display: inline-block;
+   }
 
-    }
-#ils-temoignent {
-font-family: "Merriweather", serif;
-display: flex;
-justify-content: space-between;
-}
+   .section-header h2::before {
+     content: '';
+     position: absolute;
+     bottom: -10px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 80px;
+     height: 4px;
+     background-color: #ffc107;
+   }
 
-.temoignage {
-    flex-basis: calc(33.33% - 20px); /* Ajuste la largeur de chaque témoignage */
-    text-align: center; /* Centre le contenu horizontalement */
-}
+   .section-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+   }
 
-.photo-ronde {
-    border-radius: 50%; /* Rendre les photos rondes */
-    width: 150px; /* Ajustez la taille selon vos besoins */
-    height: 150px;
-    display: block;
-    margin: 0 auto 10px; /* Centrez la photo */
-}
-</style>
+   .section-text {
+     flex: 1;
+     padding-right: 40px;
+   }
+
+   .section-text p {
+     font-size: 1.2rem;
+     line-height: 1.6;
+     margin-bottom: 20px;
+   }
+
+   .section-image {
+     flex: 1;
+     text-align: center;
+   }
+
+   .section-image img {
+     max-width: 100%;
+     height: auto;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+     border-radius: 10px;
+   }
+
+   .bg-light {
+     background-color: #f5f5f5 !important;
+   }
+
+   .testimonial-card {
+     background-color: #fff;
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     transition: transform 0.3s;
+   }
+
+   .testimonial-card:hover {
+     transform: translateY(-10px);
+   }
+
+   .testimonial-card img {
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 20px;
+   }
+
+   .testimonial-card blockquote {
+     font-style: italic;
+     margin-bottom: 20px;
+   }
+
+   .testimonial-card cite {
+     font-weight: bold;
+   }
+
+   .contact-form {
+     max-width: 600px;
+     margin: 0 auto;
+   }
+
+   .contact-form .form-control {
+     border-radius: 0;
+   }
+
+   .contact-form .btn-primary {
+     background-color: #ffc107;
+     border-color: #ffc107;
+     border-radius: 0;
+     padding: 10px 30px;
+     font-weight: bold;
+     transition: background-color 0.3s, border-color 0.3s;
+   }
+
+   .contact-form .btn-primary:hover {
+     background-color: #ff9800;
+     border-color: #ff9800;
+   }
+
+   footer {
+     background-color: #333;
+     color: #fff;
+     padding: 20px;
+     text-align: center;
+   }
+ </style>
 </head>
 <body>
-    <div id="menu-container">
-        <div id="menu">
-            <a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie" class="button">Prendre rendez-vous<br>en ligne</a>
-            <div id="image-container">
-                <img src="CourstrompetteParis/2023-09-05.jpg" alt="Image">
+ <header>
+   <nav>
+     <ul>
+       <li><a href="#">Accueil</a></li>
+       <li><a href="#about">À Propos</a></li>
+       <li><a href="#approach">Approche</a></li>
+       <li><a href="#testimonials">Témoignages</a></li>
+       <li><a href="#contact">Contact</a></li>
+     </ul>
+   </nav>
+ </header>
+
+ <section class="hero">
+   <div class="hero-content">
+     <h1 class="hero-title animate__animated">Libérez votre Passion</h1>
+     <h2 class="hero-subtitle animate__animated">
+      Devenez un <span class="typed-text"></span><span class="typed-cursor">|</span>
+    </h2>
+  </div>
+  <img src="https://source.unsplash.com/800x600/?trumpet" alt="Trumpet Animation" class="trumpet-animation">
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>À Propos de JC</h2>
+    </div>
+    <div class="section-content">
+      <div class="section-text">
+        <p>JC est un trompettiste passionné qui enseigne depuis l'âge de 15 ans. Avec des dizaines d'élèves qui progressent à une vitesse fulgurante, il a fait de la transmission de son savoir sa véritable vocation.</p>
+        <p>Son approche unique allie le travail sur la technique, la posture, le souffle, mais aussi la gestion du stress et des émotions. JC vous guidera vers une maîtrise complète de la trompette, tout en vous aidant à surmonter vos obstacles mentaux pour libérer pleinement votre potentiel.</p>
+      </div>
+      <div class="section-image">
+        <img src="https://source.unsplash.com/600x400/?trumpet-teacher" alt="JC, Professeur de Trompette">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>L'Approche Unique de JC</h2>
+    </div>
+    <div class="section-content">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <i class="fas fa-music text-primary mb-3" style="font-size: 3rem;"></i>
+              <h3 class="card-title">Technique de Jeu</h3>
+              <p class="card-text">Maîtrisez les fondamentaux de la trompette, de l'embouchure à la respiration, en passant par les doigtés et l'articulation.</p>
             </div>
-            <a href="https://wa.me/33663738902?text=Bonjour%2C%20je%20suis%20tombé%20sur%20votre%20site%20web%2C%20j'aimerais%20en%20savoir%20plus%2C%20quand%20seriez-vous%20disponible%20pour%20échanger%20%3F" class="button">Envoyer<br>un message whatsapp</a>
+          </div>
         </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <i class="fas fa-user-ninja text-primary mb-3" style="font-size: 3rem;"></i>
+              <h3 class="card-title">Posture et Souffle</h3>
+              <p class="card-text">Développez une posture optimale et une gestion efficace du souffle pour une performance de haut niveau.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <i class="fas fa-brain text-primary mb-3" style="font-size: 3rem;"></i>
+              <h3 class="card-title">Gestion du Stress et des Émotions</h3>
+              <p class="card-text">Apprenez à maîtriser vos émotions et à gérer le stress pour une interprétation confiante et expressive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="text-container">
-        <h1>Bientôt ici tous les détails de l'école !</h1>
-        <h2>Prenez rendez vous dès maintenant tant qu'il reste des disponibilités</h2>
-        
+  </div>
+</section>
+
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Ce que disent les élèves</h2>
     </div>
-    <section id="ils-temoignent">
-        <div class="temoignage">
-            <img src="CourstrompetteParis/2024-02-21_12-32-48_5960.png" class="photo-ronde">
-            <p>Dommage que je peux pas apprendre la trompette a cause de mes lèvres artificielles !</p>
-            <p>Kim Kardashian</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="testimonial-card">
+          <img src="https://source.unsplash.com/80x80/?portrait" alt="Élève 1">
+          <blockquote>"Grâce à JC, j'ai non seulement progressé techniquement, mais j'ai aussi appris à gérer mon stress avant les performances. Un véritable game-changer !"</blockquote>
+          <cite>Sophie L., Étudiante en Musique</cite>
         </div>
-        <div class="temoignage">
-            <img src="CourstrompetteParis/2024-02-21_12-47-00_3915.png" class="photo-ronde">
-            <p>Mon moment de soulagement dans la journée quand mon fils apprends la trompette avec Jean Christophe !</p>
-            <p>Merci !!!</p>
+      </div>
+      <div class="col">
+        <div class="testimonial-card">
+          <img src="https://source.unsplash.com/80x80/?portrait" alt="Élève 2">
+          <blockquote>"Avec JC, j'ai pu travailler sur des aspects que je n'aurais jamais imaginés, comme la gestion des émotions. Aujourd'hui, je joue avec une confiance renouvelée."</blockquote>
+          <cite>Martin D., Musicien Professionnel</cite>
         </div>
-        <div class="temoignage">
-            <img src="CourstrompetteParis/2024-02-21_13-00-52_9771.png" class="photo-ronde">
-            <p>La trompette c'est joli</p>
+      </div>
+      <div class="col">
+        <div class="testimonial-card">
+          <img src="https://source.unsplash.com/80x80/?portrait" alt="Élève 3">
+          <blockquote>"Les leçons de JC sont un véritable investissement dans votre progression. Son approche globale vous fera franchir des paliers que vous n'auriez jamais crus possibles."</blockquote>
+          <cite>Léa M., Étudiante en Conservatoire</cite>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contactez JC</h2>
+      <h3>06.63.73.89.02</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <form class="contact-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2023 Leçons de Trompette avec JC. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  const typedText = new Typed('.typed-text', {
+    strings: ["Trompettiste Accompli", "Maître de la Scène", "Virtuose du Cuivre"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
 </body>
 </html>
