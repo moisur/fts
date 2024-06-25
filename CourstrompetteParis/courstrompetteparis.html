@@ -1,377 +1,597 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Leçons de Trompette avec JC - Maître Passionné</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
- <style>
-   body {
-     font-family: 'Montserrat', sans-serif;
-     margin: 0;
-     padding: 0;
-     overflow-x: hidden;
-   }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JC Trompette - Révélez Votre Génie Musical en 90 Jours Garantis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #FFA500;
+            --secondary-color: #4A4A4A;
+            --accent-color: #FF6347;
+            --light-bg: #F8F9FA;
+            --dark-bg: #333333;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-carousel .carousel-item {
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .hero-carousel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta:hover {
+            background-color: #ff7f50;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .feature-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        #faq {
+            background-color: var(--light-bg);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        #contact {
+            background-color: var(--dark-bg);
+            color: #fff;
+        }
+        
+        .contact-info i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
 
-   header {
-     background-color: #333;
-     color: #fff;
-     padding: 20px;
-     position: fixed;
-     top: 0;
-     left: 0;
-     right: 0;
-     z-index: 1000;
-   }
-
-   nav ul {
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
-     display: flex;
-   }
-
-   nav ul li {
-     margin-right: 20px;
-   }
-
-   nav ul li a {
-     color: #fff;
-     text-decoration: none;
-     transition: color 0.3s ease;
-   }
-
-   nav ul li a:hover {
-     color: #ffc107;
-   }
-
-   .hero {
-     height: 100vh;
-     background: linear-gradient(135deg, #ffc107, #ff9800);
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: relative;
-     overflow: hidden;
-   }
-
-   .hero-content {
-     text-align: center;
-     color: #fff;
-     z-index: 1;
-   }
-
-   .hero-title {
-     font-size: 4rem;
-     margin-bottom: 20px;
-     opacity: 0;
-     animation: fadeInUp 1s ease forwards;
-   }
-
-   .hero-subtitle {
-     font-size: 2rem;
-     margin-bottom: 40px;
-     opacity: 0;
-     animation: fadeInUp 1s ease 0.5s forwards;
-   }
-
-   .typed-cursor {
-     font-size: 2rem;
-     opacity: 1;
-     animation: blink 0.7s infinite;
-   }
-
-   @keyframes blink {
-     0% { opacity: 1; }
-     50% { opacity: 0; }
-     100% { opacity: 1; }
-   }
-
-   .trumpet-animation {
-     position: absolute;
-     width: 100%;
-     max-width: 800px;
-   }
-
-
-   .section {
-     padding: 100px 20px;
-   }
-
-   .section-header {
-     text-align: center;
-     margin-bottom: 40px;
-   }
-
-   .section-header h2 {
-     font-size: 3rem;
-     margin-bottom: 20px;
-     position: relative;
-     display: inline-block;
-   }
-
-   .section-header h2::before {
-     content: '';
-     position: absolute;
-     bottom: -10px;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 80px;
-     height: 4px;
-     background-color: #ffc107;
-   }
-
-   .section-content {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     flex-wrap: wrap;
-   }
-
-   .section-text {
-     flex: 1;
-     padding-right: 40px;
-   }
-
-   .section-text p {
-     font-size: 1.2rem;
-     line-height: 1.6;
-     margin-bottom: 20px;
-   }
-
-   .section-image {
-     flex: 1;
-     text-align: center;
-   }
-
-   .section-image img {
-     max-width: 100%;
-     height: auto;
-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-     border-radius: 10px;
-   }
-
-   .bg-light {
-     background-color: #f5f5f5 !important;
-   }
-
-   .testimonial-card {
-     background-color: #fff;
-     padding: 30px;
-     border-radius: 10px;
-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-     text-align: center;
-     transition: transform 0.3s;
-   }
-
-   .testimonial-card:hover {
-     transform: translateY(-10px);
-   }
-
-   .testimonial-card img {
-     width: 80px;
-     height: 80px;
-     border-radius: 50%;
-     object-fit: cover;
-     margin-bottom: 20px;
-   }
-
-   .testimonial-card blockquote {
-     font-style: italic;
-     margin-bottom: 20px;
-   }
-
-   .testimonial-card cite {
-     font-weight: bold;
-   }
-
-   .contact-form {
-     max-width: 600px;
-     margin: 0 auto;
-   }
-
-   .contact-form .form-control {
-     border-radius: 0;
-   }
-
-   .contact-form .btn-primary {
-     background-color: #ffc107;
-     border-color: #ffc107;
-     border-radius: 0;
-     padding: 10px 30px;
-     font-weight: bold;
-     transition: background-color 0.3s, border-color 0.3s;
-   }
-
-   .contact-form .btn-primary:hover {
-     background-color: #ff9800;
-     border-color: #ff9800;
-   }
-
-   footer {
-     background-color: #333;
-     color: #fff;
-     padding: 20px;
-     text-align: center;
-   }
- </style>
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
- <header>
-   <nav>
-     <ul>
-       <li><a href="#">Accueil</a></li>
-       <li><a href="#about">À Propos</a></li>
-       <li><a href="#approach">Approche</a></li>
-       <li><a href="#testimonials">Témoignages</a></li>
-       <li><a href="#contact">Contact</a></li>
-     </ul>
-   </nav>
- </header>
-
- <section class="hero">
-   <div class="hero-content">
-     <h1 class="hero-title animate__animated">Libérez votre Passion</h1>
-     <h2 class="hero-subtitle animate__animated">
-      Devenez un <span class="typed-text"></span><span class="typed-cursor">|</span>
-    </h2>
-  </div>
-  <img src="https://source.unsplash.com/800x600/?trumpet" alt="Trumpet Animation" class="trumpet-animation">
-</section>
-<section id="about" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>À Propos de JC</h2>
-    </div>
-    <div class="section-content d-md-flex flex-md-row d-flex flex-column">
-      <div class="section-text mb-3 mb-md-0">
-        <p>JC est un trompettiste passionné qui enseigne depuis l'âge de 15 ans. Avec des dizaines d'élèves qui progressent à une vitesse fulgurante, il a fait de la transmission de son savoir sa véritable vocation.</p>
-        <p>Son approche unique allie le travail sur la technique, la posture, le souffle, mais aussi la gestion du stress et des émotions. JC vous guidera vers une maîtrise complète de la trompette, tout en vous aidant à surmonter vos obstacles mentaux pour libérer pleinement votre potentiel.</p>
-      </div>
-      <div class="section-image">
-        <img src="https://source.unsplash.com/600x400/?trumpet-teacher" alt="JC, Professeur de Trompette">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="approach" class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2>L'Approche Unique de JC</h2>
-    </div>
-    <div class="section-content">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <i class="fas fa-music text-primary mb-3" style="font-size: 3rem;"></i>
-              <h3 class="card-title">Technique de Jeu</h3>
-              <p class="card-text">Maîtrisez les fondamentaux de la trompette, de l'embouchure à la respiration, en passant par les doigtés et l'articulation.</p>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">JC Trompette</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Méthode</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <i class="fas fa-user-ninja text-primary mb-3" style="font-size: 3rem;"></i>
-              <h3 class="card-title">Posture et Souffle</h3>
-              <p class="card-text">Développez une posture optimale et une gestion efficace du souffle pour une performance de haut niveau.</p>
+    </nav>
+
+
+    <header class="hero">
+        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('https://images.pexels.com/photos/4087991/pexels-photo-4087991.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+                </div>
+                <div class="carousel-item" style="background-image: url('image1.jpg');">
+                </div>
+                <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <i class="fas fa-brain text-primary mb-3" style="font-size: 3rem;"></i>
-              <h3 class="card-title">Gestion du Stress et des Émotions</h3>
-              <p class="card-text">Apprenez à maîtriser vos émotions et à gérer le stress pour une interprétation confiante et expressive.</p>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="mb-4">Devenez un Virtuose de la Trompette en 90 Jours Garantis</h1>
+                <p class="lead mb-5">Découvrez ma méthode révolutionnaire, le "Maestro des Débutants", et libérez le génie musical qui sommeille en vous !</p>
+                <a href="#booking" class="btn btn-cta btn-lg pulse-animation">🎺 Réservez Votre Cours Gratuit et Transformateur 🎺</a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<section id="testimonials" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Ce que disent les élèves</h2>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="testimonial-card">
-          <img src="14.png" alt="Élève 1">
-          <blockquote>"Grâce à JC, j'ai non seulement progressé techniquement, mais j'ai aussi appris à gérer mon stress avant les performances. Un véritable game-changer !"</blockquote>
-          <cite>Sophie L., Étudiante en Musique</cite>
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">JC : Le "Maestro des Débutants" qui Révolutionne l'Apprentissage de la Trompette</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in">
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="JC, votre mentor musical" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6 fade-in">
+                    <p class="lead">Imaginez-vous jouant vos morceaux préférés en seulement 90 jours, même si vous n'avez jamais touché une trompette de votre vie. C'est possible, et je suis là pour vous guider à chaque étape !</p>
+                    <p><strong>Mon expertise inégalée :</strong></p>
+                    <ul>
+                        <li>✅ Lauréat du Conservatoire National Supérieur de Musique de Paris</li>
+                        <li>✅ Inspiré par les légendes Maurice André et Wynton Marsalis</li>
+                        <li>✅ 20 ans d'expérience sur les plus grandes scènes</li>
+                        <li>✅ Créateur de la méthode "Trompette Express" qui a déjà transformé plus de 50 vies</li>
+                    </ul>
+                    <p>J'ai condensé des décennies d'expertise en une méthode révolutionnaire qui vous fera progresser 3 fois plus vite qu'avec les méthodes traditionnelles. Préparez-vous à vivre une expérience musicale extraordinaire !</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="testimonial-card">
-          <img src="13.png" alt="Élève 2">
-          <blockquote>"Avec JC, j'ai pu travailler sur des aspects que je n'aurais jamais imaginés, comme la gestion des émotions. Aujourd'hui, je joue avec une confiance renouvelée."</blockquote>
-          <cite>Léa D., Musicienne Professionnel</cite>
-        </div>
-      </div>
-      <div class="col">
-        <div class="testimonial-card">
-          <img src="12.png" alt="Élève 3">
-          <blockquote>"Les leçons de JC sont un véritable investissement dans votre progression. Son approche globale vous fera franchir des paliers que vous n'auriez jamais crus possibles."</blockquote>
-          <cite>Martin M., Étudiant au Conservatoire</cite>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contact" class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2>Contactez JC</h2>
-      <h3>06.63.73.89.02</h3>
-    </div>
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <form class="contact-form"  action="https://formspree.io/f/mnqeydjq" method="POST">
-          <div class="mb-3">
-            <label for="name">Votre nom</label>
-            <input type="text" class="form-control" id="name" name="name" required> 
-          </div>
-          <div class="mb-3">
-            <label for="email">Votre mail</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="message">Et votre message !</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">En avant la trompette !🎺</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="container">
-    <p>&copy; 2024 Leçons de Trompette avec JC. Tous droits réservés.</p>
-  </div>
-</footer>
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">La Méthode "Trompette Express" : Votre Passeport pour l'Excellence en 90 Jours</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="feature-box">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Progression Fulgurante</h3>
+                        <p>Mon approche unique vous propulse de débutant à musicien accompli en un temps record. Préparez-vous à épater vos proches !</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="feature-box">
+                        <i class="fas fa-brain"></i>
+                        <h3>Maîtrise Mentale</h3>
+                        <p>Découvrez les secrets des pros pour transformer le trac en super-pouvoir et jouer avec une confiance inébranlable.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="feature-box">
+                        <i class="fas fa-users"></i>
+                        <h3>Communauté Inspirante</h3>
+                        <p>Rejoignez une famille de passionnés qui vous soutiendront et vous inspireront à chaque étape de votre aventure musicale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-  const typedText = new Typed('.typed-text', {
-    strings: ["Trompettiste Accompli", "Maître de la Scène", "Virtuose du Cuivre"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true
-  });
-</script>
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Ils ont Osé, ils ont Réussi : Témoignages de nos Élèves</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="14.png" alt="Sophie L.">
+                        <p>"Grâce à JC, j'ai réalisé mon rêve de jouer dans un orchestre professionnel en seulement 6 mois. Sa méthode a changé ma vie !"</p>
+                        <div class="name">Sophie L., 28 ans - De débutante à pro en 6 mois</div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="13.png" alt="Thomas M.">
+                        <p>"À 40 ans, je pensais que c'était trop tard. JC m'a prouvé le contraire. En 90 jours, je donnais déjà mes premiers concerts !"</p>
+                        <div class="name">Thomas M., 41 ans - A surmonté ses doutes et brille sur scène</div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="12.png" alt="Léa D.">
+                        <p>"JC ne m'a pas seulement appris à jouer, il m'a appris à ressentir la musique. Chaque leçon est une révélation. Je vis mon rêve éveillé !"</p>
+                        <div class="name">Léa D., 22 ans - A trouvé sa vocation grâce à JC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="guarantee" class="section bg-primary text-white">
+        <div class="container">
+            <h2 class="section-title fade-in">Ma Garantie "Satisfaction ou Remboursé"</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 fade-in text-center">
+                    <p class="lead">Je suis tellement convaincus de l'efficacité de notre méthode que nous vous offrons une garantie inédite :</p>
+                    <h3 class="mt-4">Si vous ne jouez pas votre premier morceau complet en 90 jours, je vous rembourse intégralement !</h3>
+                    <p>Aucun risque pour vous, seulement une opportunité incroyable de transformer votre vie par la musique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Ce que disent mes élèves</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="14.png" alt="Sophie L.">
+                        <p>"Grâce à JC, j'ai réalisé mon rêve de jouer dans un orchestre professionnel. Sa méthode est tout simplement révolutionnaire !"</p>
+                        <div class="name">Sophie L., 28 ans</div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="13.png" alt="Thomas M.">
+                        <p>"J'étais un débutant complet à 40 ans. En 6 mois avec JC, je donne déjà mes premiers concerts. Incroyable !"</p>
+                        <div class="name">Thomas M., 41 ans</div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="12.png" alt="Léa D.">
+                        <p>"JC ne m'a pas seulement appris à jouer, il m'a appris à ressentir la musique. Chaque leçon est une révélation."</p>
+                        <div class="name">Léa D., 22 ans</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Questions Fréquentes</h2>
+            <div class="accordion fade-in" id="accordionFAQ">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Suis-je trop vieux pour commencer la trompette ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Absolument pas ! Avec la méthode JC, il n'y a pas d'âge pour commencer. Nous avons des élèves de 7 à 77 ans qui progressent tous à leur rythme et atteignent leurs objectifs.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Combien de temps faut-il pour voir des résultats ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Avec notre méthode unique, la plupart des élèves constatent des progrès significatifs dès les premières semaines. En 3 mois, vous serez capable de jouer vos premiers morceaux complets !
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Ai-je besoin de ma propre trompette pour commencer les cours ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Pour votre premier cours gratuit, nous pouvons vous prêter une trompette. Ensuite, il est recommandé d'avoir votre propre instrument. Nous pouvons vous conseiller sur le choix d'une trompette adaptée à votre niveau et à votre budget.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Quelle est la fréquence recommandée des cours ?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Pour un progrès optimal, nous recommandons une leçon hebdomadaire. Cependant, nous adaptons la fréquence en fonction de vos objectifs et de votre disponibilité. Certains élèves préfèrent des cours bi-mensuels ou même deux fois par semaine pour une progression plus rapide.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            La méthode JC convient-elle aux musiciens avancés ?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Absolument ! La méthode JC s'adapte à tous les niveaux. Pour les musiciens avancés, nous travaillons sur des techniques avancées, l'interprétation, l'improvisation et la préparation aux performances professionnelles. Nous vous aiderons à franchir de nouveaux paliers dans votre pratique.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Réservez Votre Cours Gratuit</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 fade-in">
+                    <form id="booking-form" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="name" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer votre nom.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Adresse e-mail</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer une adresse e-mail valide.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Numéro de téléphone</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer votre numéro de téléphone.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="experience" class="form-label">Niveau d'expérience</label>
+                            <select class="form-select" id="experience" required>
+                                <option value="">Choisissez votre niveau</option>
+                                <option value="beginner">Débutant total</option>
+                                <option value="intermediate">Intermédiaire</option>
+                                <option value="advanced">Avancé</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Veuillez sélectionner votre niveau d'expérience.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message (optionnel)</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-cta btn-lg w-100">Réserver Mon Cours Gratuit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Contactez-moi</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="contact-info text-center">
+                        <i class="fas fa-map-marker-alt mb-3"></i>
+                        <h3>Adresse</h3>
+                        <p>9 rue de la Fontaine au roi<br>75011 Paris, France</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="contact-info text-center">
+                        <i class="fas fa-phone mb-3"></i>
+                        <h3>Téléphone</h3>
+                        <p>06.63.73.89.02</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="contact-info text-center">
+                        <i class="fas fa-envelope mb-3"></i>
+                        <h3>Email</h3>
+                        <p>yervantj@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 JC Trompette. Tous droits réservés.</p>
+            <div class="social-icons mt-3">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".fade-in");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+      // Form validation and WhatsApp redirect
+      (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                        if (form.checkValidity()) {
+                            // Redirect to WhatsApp with pre-filled message
+                            var name = document.getElementById('name').value;
+                            var message = encodeURIComponent(`Bonjour JC ! Je m'appelle ${name} et je suis très intéressé(e) par votre méthode "Trompette Express". J'aimerais réserver mon cours gratuit et transformateur. Quand pourrions-nous commencer cette incroyable aventure musicale ?`);
+                            window.location.href = `https://wa.me/33663738902?text=${message}`;
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+
+                // Initialisation du carrousel
+                var heroCarousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
+            interval: 5000,
+            pause: false
+        });
+    </script>
 </body>
 </html>
