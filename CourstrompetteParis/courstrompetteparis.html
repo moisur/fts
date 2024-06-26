@@ -13,7 +13,7 @@
         :root {
             --primary-color: #FFA500;
             --secondary-color: #4A4A4A;
-            --accent-color: #FF6347;
+            --accent-color: #ff5e00;
             --light-bg: #F8F9FA;
             --dark-bg: #333333;
         }
@@ -24,7 +24,13 @@
             line-height: 1.6;
         }
         
+        /* Styles pour la navbar */
         .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 4px rgba(0,0,0,.1);
         }
@@ -43,25 +49,84 @@
         .nav-link:hover {
             color: var(--primary-color);
         }
-        
+        /* Styles pour le hero */
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
+            padding-top: 60px; /* Ajustez cette valeur selon la hauteur de votre navbar */
+            background-image: url('https://images.pexels.com/photos/4087991/pexels-photo-4087991.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #fff;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             text-align: center;
-            z-index: 2;
-            width: 100%;
-            padding: 0 15px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-        
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .bg-custom-primary {
+    background-color: var(--primary-color);
+    color: #fff; /* Assurez-vous que le texte est lisible sur le fond orange */
+}
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .btn-cta {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+
         .hero-carousel {
             position: absolute;
             top: 0;
@@ -86,36 +151,6 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        
-        .btn-cta {
-            background-color: var(--accent-color);
-            color: #fff;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-cta:hover {
-            background-color: #ff7f50;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
         .section {
             padding: 100px 0;
         }
@@ -219,6 +254,36 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-cta {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn-cta {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -335,14 +400,14 @@
                 </div>
                 <div class="col-md-4 fade-in">
                     <div class="testimonial">
-                        <img src="12.png" alt="Thomas M.">
+                        <img src="13.png" alt="Thomas M.">
                         <p>"À 40 ans, je pensais que c'était trop tard. JC m'a prouvé le contraire. En 90 jours, je donnais déjà mes premiers concerts !"</p>
                         <div class="name">Thomas M., 41 ans - A surmonté ses doutes et brille sur scène</div>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in">
                     <div class="testimonial">
-                        <img src="13.png" alt="Léa D.">
+                        <img src="12.png" alt="Léa D.">
                         <p>"JC ne m'a pas seulement appris à jouer, il m'a appris à ressentir la musique. Chaque leçon est une révélation. Je vis mon rêve éveillé !"</p>
                         <div class="name">Léa D., 22 ans - A trouvé sa vocation grâce à JC</div>
                     </div>
@@ -351,12 +416,12 @@
         </div>
     </section>
 
-    <section id="guarantee" class="section bg-primary text-white">
+    <section id="guarantee" class="section bg-dark text-white">
         <div class="container">
             <h2 class="section-title fade-in">Ma Garantie "Satisfaction ou Remboursé"</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8 fade-in text-center">
-                    <p class="lead">Je suis tellement convaincus de l'efficacité de notre méthode que nous vous offrons une garantie inédite :</p>
+                    <p class="lead">Je suis tellement convaincus de l'efficacité de ma méthode que je vous offre une garantie inédite :</p>
                     <h3 class="mt-4">Si vous ne jouez pas votre premier morceau complet en 90 jours, je vous rembourse intégralement !</h3>
                     <p>Aucun risque pour vous, seulement une opportunité incroyable de transformer votre vie par la musique.</p>
                 </div>
@@ -364,7 +429,34 @@
         </div>
     </section>
 
-
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Ce que disent mes élèves</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="14.png" alt="Sophie L.">
+                        <p>"Grâce à JC, j'ai réalisé mon rêve de jouer dans un orchestre professionnel. Sa méthode est tout simplement révolutionnaire !"</p>
+                        <div class="name">Sophie L., 28 ans</div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="13.png" alt="Thomas M.">
+                        <p>"J'étais un débutant complet à 40 ans. En 6 mois avec JC, je donne déjà mes premiers concerts. Incroyable !"</p>
+                        <div class="name">Thomas M., 41 ans</div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <img src="12.png" alt="Léa D.">
+                        <p>"JC ne m'a pas seulement appris à jouer, il m'a appris à ressentir la musique. Chaque leçon est une révélation."</p>
+                        <div class="name">Léa D., 22 ans</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="faq" class="section">
         <div class="container">
