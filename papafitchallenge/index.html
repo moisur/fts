@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de BMR et TDEE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur de BMR et TDEE</h1>
+        <form id="bmrForm">
+            <label for="weight">Poids (kg):</label>
+            <input type="number" id="weight" required>
+            
+            <label for="height">Taille (cm):</label>
+            <input type="number" id="height" required>
+            
+            <label for="age">Âge:</label>
+            <input type="number" id="age" required>
+            
+            <label for="sex">Sexe:</label>
+            <select id="sex" required>
+                <option value="male">Homme</option>
+                <option value="female">Femme</option>
+            </select>
+
+            <label for="equation">Choisir l'équation:</label>
+            <select id="equation" required>
+                <option value="harris-benedict">Équation de Harris et Bénédict (1919)</option>
+                <option value="harris-benedict-roza">Équation de Harris et Bénédict réévaluée par Roza et Shizgal (1994)</option>
+                <option value="mifflin">Équation de Mifflin et St-Jeor (1990)</option>
+                <option value="black">Équation de Black et al. (1996)</option>
+                <option value="schofield">Équation de Schofield et al. (1985)</option>
+                <option value="oxford">Équation d'Oxford ou d'Henry (2005)</option>
+                <option value="cunningham1980">Équation de Cunningham (1980)</option>
+                <option value="cunningham1991">Équation de Cunningham (1991)</option>
+                <option value="lorenzo">Équation de Lorenzo (1999)</option>
+                <option value="ten-haaf-lean">Équation de ten Haaf et Weijs (2014) (version "masse maigre")</option>
+                <option value="ten-haaf-weight">Équation de ten Haaf et Weijs (2014) (version "poids corporel")</option>
+                <option value="tinsley-lean">Équation de Tinsley (2019) (version "masse maigre")</option>
+                <option value="tinsley-weight">Équation de Tinsley (2019) (version "poids corporel")</option>
+            </select>
+
+            <label for="activityLevel">Niveau d'activité physique:</label>
+            <select id="activityLevel" required>
+                <option value="1.2">Sédentaire (peu ou pas d'exercice)</option>
+                <option value="1.375">Exercice léger (1-2 fois par semaine)</option>
+                <option value="1.55">Exercice modéré (3-5 fois par semaine)</option>
+                <option value="1.725">Exercice intense (6-7 fois par semaine)</option>
+                <option value="1.9">Exercice très intense (deux fois par jour)</option>
+            </select>
+
+            <label for="goalWeight">Poids idéal (kg):</label>
+            <input type="number" id="goalWeight" required>
+
+            <label for="timeFrame">Durée (semaines):</label>
+            <input type="number" id="timeFrame" required>
+            
+            <button type="button" onclick="calculateBMR()">Calculer</button>
+        </form>
+
+        <div id="results">
+            <h2>Résultats</h2>
+            <p id="bmrResult">BMR: </p>
+            <p id="tdeeResult">TDEE: </p>
+            <p id="goalCalories">Calories journalières pour atteindre l'objectif: </p>
+        </div>
+
+        <div id="plan">
+            <h2>Plan de nutrition et d'entraînement</h2>
+            <div id="nutritionPlan">
+                <h3>Plan de nutrition</h3>
+                <p id="nutritionDetails"></p>
+            </div>
+            <div id="trainingPlan">
+                <h3>Plan d'entraînement</h3>
+                <p id="trainingDetails"></p>
+            </div>
+        </div>
+        <div id="idealWeightSection">
+            <h2>Poids idéal selon différentes formules</h2>
+            <canvas id="idealWeightChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
