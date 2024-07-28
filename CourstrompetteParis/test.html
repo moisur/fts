@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap">
+<title>Mon Site Web</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Menu */
+    .menu {
+      height: 10vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: height 0.5s ease-in-out;
+    }
+
+    .menu ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .menu ul li {
+      margin: 0 10px;
+      flex-grow: 1;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #36c5c1;
+      font-weight: bold;
+      font-size: 2em;
+      font-family: "Merriweather", serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    /* Style au survol des liens */
+    .menu ul li a:hover {
+      cursor: pointer;
+      font-size: 203%;
+      color: #f9dfa4;
+      box-shadow: 0 0 300px #36c5c1;
+      border: 3px solid #f9dfa4;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      -webkit-transition: text-shadow 0.3s ease;
+      transition: text-shadow 0.3s ease;
+    }
+
+    /* Fonts */
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l521wRpXw.ttf");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5Z1wRpXw.ttf");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l52xwRpXw.ttf");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5-3wRpXw.ttf");
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5X3wRpXw.ttf");
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5Y3wRpXw.ttf");
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l52xwRpXw.ttf");
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Merriweather";
+      src: url("https://fonts.gstatic.com/s/merriweather/v25/u-440qyriQwlOrhSvowK_l5-3wRpXw.ttf");
+      font-weight: 900;
+      font-style: italic;
+    }
+    #menu-container {
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding-bottom: 22%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #menu {
+        background-color: #4b4f50;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 22vh%;
+        max-height: 507px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .button {
+        border: 0; /* Supprimer la bordure initiale */
+
+        text-decoration: none;
+        color: #36c5c1;
+        font-weight: bold;
+        font-size: 2em;
+        font-family: "Merriweather", serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-align: center; /* Centrer le texte horizontalement */
+        padding: 10px 20px; /* Ajuster le padding pour rapprocher le texte du bord */
+}
+      /* Animation */
+  .button a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #f88913; /* Couleur de l'animation */
+    opacity: 0.5; /* Opacité de l'animation */
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+
+  .button a:hover::before {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+.button:hover {
+  cursor: pointer;
+  font-size: 203%;
+  color: #f9dfa4;
+  box-shadow: 0 0 300px #36c5c1;
+  border: 3px solid #f9dfa4;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Réduire la distance de l'ombre */
+  -webkit-transition: text-shadow 0.3s ease;
+  transition: text-shadow 0.3s ease;
+}
+    
+    #image-container {
+        text-align: center;
+    }
+    #image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+    #text-container {
+        text-align: center;
+        font-size: 203%;
+        font-family: "Merriweather";
+
+        margin-top: 307px; /* pour compenser la hauteur du menu */
+        position: relative; /* Ajout de la position relative */
+        z-index: 2; /* Définition d'un z-index plus élevé pour le conteneur texte */
+
+    }
+#ils-temoignent {
+font-family: "Merriweather", serif;
+display: flex;
+justify-content: space-between;
+}
+
+.temoignage {
+    flex-basis: calc(33.33% - 20px); /* Ajuste la largeur de chaque témoignage */
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+.photo-ronde {
+    border-radius: 50%; /* Rendre les photos rondes */
+    width: 150px; /* Ajustez la taille selon vos besoins */
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px; /* Centrez la photo */
+}
+</style>
+</head>
+<body>
+    <div id="menu-container">
+        <div id="menu">
+            <a href="https://calendly.com/freegeneration/lecoledes1-zonedegenie" class="button">Prendre rendez-vous<br>en ligne</a>
+            <div id="image-container">
+                <img src="https://raw.githubusercontent.com/moisur/fts/053a0157b162cd1e2982f28a46038918696fc8ae/2023-09-05.jpg" alt="Image">
+            </div>
+            <a href="https://wa.me/33663738902?text=Bonjour%2C%20je%20suis%20tombé%20sur%20votre%20site%20web%2C%20j'aimerais%20en%20savoir%20plus%2C%20quand%20seriez-vous%20disponible%20pour%20échanger%20%3F" class="button">Envoyer<br>un message whatsapp</a>
+        </div>
+    </div>
+    <div id="text-container">
+        <h1>Bientôt ici tous les détails de l'école !</h1>
+        <h2>Prenez rendez vous dès maintenant tant qu'il reste des disponibilités</h2>
+        
+    </div>
+    <section id="ils-temoignent">
+         <div class="temoignage">
+            <img src="2024-02-21_12-32-48_5960.png" class="photo-ronde">
+            <p>Dommage que je peux pas apprendre la trompette a cause de mes lèvres artificielles !</p>
+            <p>Kim Kardashian</p>
+        </div>
+        <div class="temoignage">
+            <img src="2024-02-21_12-47-00_3915.png" class="photo-ronde">
+            <p>Mon moment de soulagement dans la journée quand mon fils apprends la trompette avec Jean Christophe !</p>
+            <p>Merci !!!</p>
+        </div>
+        <div class="temoignage">
+            <img src="2024-02-21_13-00-52_9771.png" class="photo-ronde">
+            <p>La trompette c'est joli</p>
+        </div>  
+    </section>
+    <div class="calendly-badge-widget"><div class="calendly-badge-content" style="background: rgb(75, 79, 82); color: rgb(255, 255, 255);">Réservez votre appel découverte<span>powered by Calendly</span></div></div>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                Calendly.initBadgeWidget({
+                    url: 'https://calendly.com/freegeneration/lecoledes1-zonedegenie',
+                    text: 'Réservez votre appel découverte', // Texte personnalisé
+                    color: '#4b4f52', // Couleur de fond personnalisée
+                    textColor: '#ffffff', // Couleur du texte
+                    branding: true
+                });
+            }
+</body>
+</html>
