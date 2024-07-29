@@ -83,7 +83,25 @@
         <div id="idealWeightSection">
             <h2>Poids idéal selon différentes formules</h2>
             <canvas id="idealWeightChart"></canvas>
-        </div>
+        </div>  
+        <h2>Enregistrer mon poids journalier et mes séances</h2>
+        <label for="dailyWeight">Poids du jour (kg):</label>
+        <input type="number" id="dailyWeight" name="dailyWeight"><br>
+        
+        <label for="sessions">Nombre de séances:</label>
+        <input type="number" id="sessions" name="sessions"><br>
+        
+        <button onclick="startSession()">Démarrer une séance</button>
+        <button onclick="endSession()">Terminer une séance</button>
+        <button onclick="saveDailyData()">Enregistrer les données du jour</button>
+
+        <h2>Mon Programme</h2>
+        <button onclick="showProgram()">Afficher Mon Programme</button>
+        <div id="programDetails"></div>
+
+        <canvas id="idealWeightChart"></canvas>
+        <div id="nutritionDetails"></div>
+        <div id="trainingDetails"></div>
     </div>
     <script src="script.js"></script>
 </body>

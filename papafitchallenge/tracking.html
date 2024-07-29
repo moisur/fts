@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi d'Habitudes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        .recording {
+            filter: brightness(85%);
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8 pb-2 border-b-2 border-blue-500">Application de Suivi d'Habitudes</h1>
+        
+        <div id="categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Les catégories seront ajoutées ici par JavaScript -->
+        </div>
+
+        <h2 class="text-2xl font-semibold text-gray-800 mt-12 mb-4">Tableau de bord</h2>
+        <div id="dashboard" class="space-y-4">
+            <!-- Les éléments du tableau de bord seront ajoutés ici par JavaScript -->
+        </div>
+
+        <div class="mt-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Graphique des activités</h2>
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const categories = [
+            {
+                name: "Trading",
+                color: "#4299E1",
+                activities: ["Recherche sur les actions", "Suivi de portefeuille"]
+            },
+            {
+                name: "Fitness",
+                color: "#48BB78",
+                activities: ["Entraînements du haut du corps", "Entraînements du bas du corps", "Entraînements du corps entier", "Exercices cardio"]
+            },
+            {
+                name: "Distractions",
+                color: "#ED8936",
+                activities: ["Réseaux sociaux", "TV/Streaming", "Jeux vidéo", "Autre"]
+            },
+            {
+                name: "Création de Contenu",
+                color: "#9F7AEA",
+                activities: ["Écriture", "Production vidéo", "Conception graphique", "Podcasting"]
+            },
+            {
+                name: "Soins Personnels",
+                color: "#F56565",
+                activities: ["Étirements", "Méditation", "Suivi du sommeil"]
+            }
+        ];
+
+        const timers = {};
+        const durations = {};
+        const sessions = {};
+
+        function createCategories() {
+            const categoriesContainer = document.getElementById('categories');
+            categories.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'bg-white p-6 rounded-lg shadow-md';
+                categoryDiv.innerHTML = `<h2 class="text-xl font-semibold text-gray-800 mb-4">${category.name}</h2>`;
+                
+                category.activities.forEach(activity => {
+                    const activityDiv = document.createElement('div');
+                    activityDiv.className = 'mb-3';
+                    activityDiv.innerHTML = `
+                        <button onclick="toggleTimer('${activity}', '${category.color}')" class="text-white font-bold py-2 px-4 rounded mr-2 transition duration-300" id="button-${activity}" style="background-color: ${category.color};">${activity}</button>
+                        <span class="font-mono" id="timer-${activity}">00:00:00</span>
+                    `;
+                    categoryDiv.appendChild(activityDiv);
+                });
+                
+                categoriesContainer.appendChild(categoryDiv);
+            });
+        }
+
+        function toggleTimer(activity, color) {
+            const button = document.getElementById(`button-${activity}`);
+            if (timers[activity]) {
+                clearInterval(timers[activity].interval);
+                const duration = (Date.now() - timers[activity].startTime) / 1000;
+                durations[activity] = (durations[activity] || 0) + duration;
+                sessions[activity] = (sessions[activity] || 0) + 1;
+                delete timers[activity];
+                button.classList.remove('recording');
+                button.textContent = activity;
+                updateDashboard();
+                updateChart();
+            } else {
+                const timerElement = document.getElementById(`timer-${activity}`);
+                const startTime = Date.now();
+                timers[activity] = {
+                    interval: setInterval(() => {
+                        const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                        timerElement.textContent = formatTime(elapsedTime);
+                    }, 1000),
+                    startTime: startTime
+                };
+                button.classList.add('recording');
+                button.textContent = "Enregistrement en cours...";
+            }
+        }
+
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const remainingSeconds = seconds % 60;
+            return [hours, minutes, remainingSeconds]
+                .map(v => v < 10 ? "0" + v : v)
+                .join(":");
+        }
+
+        function updateDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            dashboard.innerHTML = '';
+            
+            categories.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'bg-white p-4 rounded-lg shadow-md mb-4';
+                categoryDiv.innerHTML = `
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2 cursor-pointer" onclick="toggleCategory('${category.name}')">${category.name}</h3>
+                    <div id="category-${category.name}" class="hidden space-y-2">
+                    </div>
+                `;
+                dashboard.appendChild(categoryDiv);
+
+                const categoryContent = document.getElementById(`category-${category.name}`);
+                category.activities.forEach(activity => {
+                    if (durations[activity] || sessions[activity]) {
+                        const activityDiv = document.createElement('div');
+                        activityDiv.className = 'pl-4 border-l-2';
+                        activityDiv.style.borderColor = category.color;
+                        activityDiv.innerHTML = `
+                            <h4 class="font-medium">${activity}</h4>
+                            <p class="text-sm text-gray-600">Durée totale: ${formatTime(Math.floor(durations[activity] || 0))}</p>
+                            <p class="text-sm text-gray-600">Nombre de sessions: ${sessions[activity] || 0}</p>
+                        `;
+                        categoryContent.appendChild(activityDiv);
+                    }
+                });
+            });
+        }
+
+        function toggleCategory(categoryName) {
+            const categoryContent = document.getElementById(`category-${categoryName}`);
+            categoryContent.classList.toggle('hidden');
+        }
+
+        let activityChart;
+
+        function updateChart() {
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            const activities = Object.keys(durations);
+            const durationValues = Object.values(durations);
+
+            if (activityChart) {
+                activityChart.destroy();
+            }
+
+            const datasetData = categories.map(category => ({
+                label: category.name,
+                data: category.activities.map(activity => durations[activity] || 0),
+                backgroundColor: category.color,
+            }));
+
+            activityChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: categories.flatMap(category => category.activities),
+                    datasets: datasetData
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        createCategories();
+        updateDashboard();
+        updateChart();
+    </script>
+</body>
+</html>

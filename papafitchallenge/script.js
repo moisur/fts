@@ -1,3 +1,58 @@
+let dailySessions = [];
+let programData = JSON.parse(localStorage.getItem('programData')) || [];
+function startSession() {
+    const startTime = new Date().toLocaleTimeString();
+    dailySessions.push({ start: startTime });
+    alert('Séance démarrée à ' + startTime);
+}
+
+function endSession() {
+    if (dailySessions.length === 0 || dailySessions[dailySessions.length - 1].end) {
+        alert('Veuillez démarrer une séance avant de la terminer.');
+        return;
+    }
+    const endTime = new Date().toLocaleTimeString();
+    dailySessions[dailySessions.length - 1].end = endTime;
+    alert('Séance terminée à ' + endTime);
+}
+
+function saveDailyData() {
+    const dailyWeight = parseFloat(document.getElementById('dailyWeight').value);
+    const sessionCount = parseInt(document.getElementById('sessions').value);
+
+    const dailyData = {
+        date: new Date().toLocaleDateString(),
+        weight: dailyWeight,
+        sessions: sessionCount,
+        details: dailySessions
+    };
+
+    programData.push(dailyData);
+    localStorage.setItem('programData', JSON.stringify(programData));
+
+    dailySessions = []; // Reset sessions for the next day
+    alert('Données du jour enregistrées.');
+}
+
+function showProgram() {
+    const programDetails = document.getElementById('programDetails');
+    programDetails.innerHTML = '<h3>Mon Programme</h3>';
+    programData.forEach(day => {
+        const dayDiv = document.createElement('div');
+        dayDiv.innerHTML = `
+            <p>Date: ${day.date}</p>
+            <p>Poids: ${day.weight} kg</p>
+            <p>Nombre de séances: ${day.sessions}</p>
+            <p>Détails des séances:</p>
+            <ul>
+                ${day.details.map(session => `<li>Début: ${session.start}, Fin: ${session.end}</li>`).join('')}
+            </ul>
+            <hr>
+        `;
+        programDetails.appendChild(dayDiv);
+    });
+}
+
 function calculateBMR() {
     const weight = parseFloat(document.getElementById('weight').value);
     const height = parseFloat(document.getElementById('height').value);

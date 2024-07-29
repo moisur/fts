@@ -64,3 +64,10 @@ button:hover {
 #results p, #plan p {
     margin: 5px 0;
 }
+
+
+#programDetails div {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
