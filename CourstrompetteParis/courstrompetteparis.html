@@ -501,55 +501,61 @@
         </div>
     </section>
 
-    <section id="booking" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Réservez Votre Cours Gratuit</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 fade-in">
-                    <form id="booking-form" class="needs-validation" novalidate>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nom complet</label>
-                            <input type="text" class="form-control" id="name" required>
-                            <div class="invalid-feedback">
-                                Veuillez entrer votre nom.
-                            </div>
+<section id="booking" class="section">
+    <div class="container">
+        <h2 class="section-title fade-in">Réservez Votre Cours Gratuit</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 fade-in">
+                <form
+                  id="booking-form"
+                  class="needs-validation"
+                  action="https://formspree.io/f/xdkngnbl"
+                  method="POST"
+                  novalidate
+                >
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom complet</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre nom.
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Adresse e-mail</label>
-                            <input type="email" class="form-control" id="email" required>
-                            <div class="invalid-feedback">
-                                Veuillez entrer une adresse e-mail valide.
-                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Adresse e-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse e-mail valide.
                         </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Numéro de téléphone</label>
-                            <input type="tel" class="form-control" id="phone" required>
-                            <div class="invalid-feedback">
-                                Veuillez entrer votre numéro de téléphone.
-                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Numéro de téléphone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre numéro de téléphone.
                         </div>
-                        <div class="mb-3">
-                            <label for="experience" class="form-label">Niveau d'expérience</label>
-                            <select class="form-select" id="experience" required>
-                                <option value="">Choisissez votre niveau</option>
-                                <option value="beginner">Débutant total</option>
-                                <option value="intermediate">Intermédiaire</option>
-                                <option value="advanced">Avancé</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Veuillez sélectionner votre niveau d'expérience.
-                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Niveau d'expérience</label>
+                        <select class="form-select" id="experience" name="experience" required>
+                            <option value="">Choisissez votre niveau</option>
+                            <option value="beginner">Débutant total</option>
+                            <option value="intermediate">Intermédiaire</option>
+                            <option value="advanced">Avancé</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Veuillez sélectionner votre niveau d'expérience.
                         </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message (optionnel)</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-cta btn-lg w-100">Réserver Mon Cours Gratuit</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message (optionnel)</label>
+                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-cta btn-lg w-100">Réserver Mon Cours Gratuit</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="contact" class="section">
         <div class="container">
@@ -563,12 +569,13 @@
                     </div>
                 </div>
                 <div class="col-md-4 fade-in">
-                    <div class="contact-info text-center">
+                    <div class="contact-info text-center" id="contact-phone">
                         <i class="fas fa-phone mb-3"></i>
                         <h3>Téléphone</h3>
                         <p>06.63.73.89.02</p>
                     </div>
                 </div>
+
                 <div class="col-md-4 fade-in">
                     <div class="contact-info text-center">
                         <i class="fas fa-envelope mb-3"></i>
@@ -606,26 +613,12 @@
             }
         }
         window.addEventListener("scroll", reveal);
+        
+            document.getElementById('contact-phone').addEventListener('click', function () {
+                var message = encodeURIComponent('Bonjour ! Je souhaite obtenir des informations. Merci.');
+                window.location.href = `https://wa.me/33663738902?text=${message}`;
+            });
 
-      // Form validation and WhatsApp redirect
-      (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                        if (form.checkValidity()) {
-                            // Redirect to WhatsApp with pre-filled message
-                            var name = document.getElementById('name').value;
-                            var message = encodeURIComponent(`Bonjour JC ! Je m'appelle ${name} et je suis très intéressé(e) par votre méthode "La méthode JC". J'aimerais réserver mon cours gratuit et transformateur. Quand pourrions-nous commencer cette incroyable aventure musicale ?`);
-                            window.location.href = `https://wa.me/33663738902?text=${message}`;
-                        }
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
 
                 // Initialisation du carrousel
                 var heroCarousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
