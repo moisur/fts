@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JC le catalyseur de clarté : Devenez un multi potentiel accompli</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #6A11CB;
+    --secondary-color: #FFC107;
+    --text-color: #212121;
+    --background-color: #F5F5F5;
+    --accent-color: #FF5733;
+    --light-gray: #E0E0E0;
+    --blob-color-1: rgba(114, 102, 196, 0.3);
+    --blob-color-2: rgba(255, 193, 7, 0.523);
+    --blob-color-3: rgba(255, 87, 51, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    background: linear-gradient(to right, var(--primary-color), #8E44AD);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', serif;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    font-weight: bold;
+    background: linear-gradient(to bottom, #FFEC6C, var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 5px;
+}
+
+.cta-button:hover {
+    background-color: #D83C18;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+footer {
+    background: linear-gradient(to right, #4B0082, var(--primary-color));
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.offres {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.offre {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 300px;
+    text-align: center;
+}
+
+.offre:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.offre-header {
+    background: linear-gradient(to right, #8E44AD, var(--primary-color));
+    color: white;
+    padding: 20px;
+}
+
+.offre-titre {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.offre-prix {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.offre-contenu {
+    padding: 30px;
+}
+
+.offre-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+
+.offre-liste li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.offre-liste li:last-child {
+    border-bottom: none;
+}
+
+.offre-cta {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.offre-cta:hover {
+    background: #D4AC0D;
+    transform: scale(1.05);
+}
+
+.offre-populaire {
+    position: relative;
+    transform: scale(1.05);
+}
+
+.offre-populaire::before {
+    content: 'Populaire';
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 0 0 5px 5px;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.5em; }
+    .section { padding: 60px 0; }
+    .offre {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* Blobs de couleurs floutés */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: moveBlobs 10s infinite alternate;
+    z-index: 1;
+}
+
+.blob1 { 
+    width: 400px; 
+    height: 400px; 
+    background: var(--blob-color-1); 
+    top: 10%; 
+    left: 20%; 
+}
+
+.blob2 { 
+    width: 300px; 
+    height: 300px; 
+    background: var(--blob-color-2); 
+    top: 30%; 
+    right: 25%; 
+}
+
+.blob3 { 
+    width: 500px; 
+    height: 500px; 
+    background: var(--blob-color-3); 
+    bottom: 15%; 
+    left: 10%; 
+}
+
+.blob4 { 
+    width: 250px; 
+    height: 250px; 
+    background: var(--blob-color-1); 
+    top: 50%; 
+    right: 10%; 
+}
+
+.blob5 { 
+    width: 350px; 
+    height: 350px; 
+    background: var(--blob-color-2); 
+    bottom: 25%; 
+    right: 30%; 
+}
+
+.blob6 { 
+    width: 200px; 
+    height: 200px; 
+    background: var(--blob-color-3); 
+    top: 15%; 
+    left: 50%; 
+}
+
+.blob7 { 
+    width: 450px; 
+    height: 450px; 
+    background: var(--blob-color-1); 
+    bottom: 10%; 
+    right: 50%; 
+}
+
+.blob8 { 
+    width: 300px; 
+    height: 300px; 
+    background: var(--blob-color-2); 
+    top: 20%; 
+    left: 30%; 
+}
+
+.blob9 { 
+    width: 250px; 
+    height: 250px; 
+    background: var(--blob-color-3); 
+    bottom: 30%; 
+    left: 40%; 
+}
+
+.blob10 { 
+    width: 400px; 
+    height: 400px; 
+    background: var(--blob-color-1); 
+    top: 60%; 
+    left: 15%; 
+}
+
+.blob11 { 
+    width: 350px; 
+    height: 350px; 
+    background: var(--blob-color-2); 
+    bottom: 20%; 
+    right: 20%; 
+}
+
+.blob12 { 
+    width: 300px; 
+    height: 300px; 
+    background: var(--blob-color-3); 
+    top: 10%; 
+    right: 40%; 
+}
+
+.blob13 { 
+    width: 250px; 
+    height: 250px; 
+    background: var(--blob-color-1); 
+    bottom: 40%; 
+    left: 25%; 
+}
+
+.blob14 { 
+    width: 200px; 
+    height: 200px; 
+    background: var(--blob-color-2); 
+    top: 40%; 
+    left: 60%; 
+}
+
+.blob15 { 
+    width: 350px; 
+    height: 350px; 
+    background: var(--blob-color-3); 
+    bottom: 10%; 
+    right: 10%; 
+}
+
+@keyframes moveBlobs {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+    <div class="blob blob5"></div>
+    <div class="blob blob6"></div>
+    <div class="blob blob7"></div>
+    <div class="blob blob8"></div>
+    <div class="blob blob9"></div>
+    <div class="blob blob10"></div>
+    <div class="blob blob11"></div>
+    <div class="blob blob12"></div>
+    <div class="blob blob13"></div>
+    <div class="blob blob14"></div>
+    <div class="blob blob15"></div>
+    
+    <header>
+        <div class="container">
+            <h1>JC le catalyseur de clarté</h1>
+            <p>Devenez un multi potentiel accompli</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Êtes-vous un entrepreneur multi passionné ?</h2>
+                <p>Êtes-vous <span class="highlight">tiraillé entre vos nombreux talents</span>, mais freiné par des <span class="italic">doutes profonds</span> et des <span class="italic">schémas autodestructeurs</span> ?</p>
+                <p>Avez-vous l'impression de <span class="highlight">courir dans tous les sens sans vraiment avancer</span> ?</p>
+                <p>Il est temps de <span class="highlight">transformer cette tempête intérieure</span> en une <span class="highlight">force motrice pour votre succès</span>.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Vous n'êtes pas seul dans cette lutte</h2>
+                <p>Je comprends ce que vous traversez. Le sentiment d'être <span class="italic">submergé par vos idées</span>, <span class="italic">paralysé par la peur de l'échec</span>, hanté par les attentes non satisfaites de votre passé. Vous affichez peut-être une façade de confiance, mais au fond, vous doutez de votre capacité à réellement réussir.</p>
+                <p>Ces défis ne définissent pas qui vous êtes. Ils sont le <span class="highlight">tremplin vers votre transformation</span>.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Découvrez une nouvelle approche pour embrasser votre multipotentialité</h2>
+                <p>Mon nom est JC, et ma mission est de vous aider à <span class="highlight">capitaliser sur votre nature multi passionnée</span> tout en trouvant la <span class="highlight">clarté et la direction</span> qui vous ont toujours échappé. Mon approche unique combine :</p>
+                <ul>
+                    <li>L'identification et le traitement des causes profondes de votre auto-sabotage</li>
+                    <li>Le développement d'une conscience de soi aiguë pour des prises de décision éclairées</li>
+                    <li>Des stratégies concrètes pour changer vos habitudes et atteindre vos objectifs</li>
+                    <li>Un soutien continu et une responsabilisation pour assurer votre progression</li>
+                    <li>La guérison des blessures du passé qui entravent votre épanouissement actuel</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Transformez votre vie, personnelle et professionnelle</h2>
+                <p>Imaginez-vous dans quelques mois :</p>
+                <ul>
+                    <li>Débordant de <span class="highlight">confiance en vous</span> et en vos capacités uniques</li>
+                    <li>Poursuivant une <span class="highlight">vision claire de votre avenir</span>, alignée sur vos passions</li>
+                    <li>Communiquant efficacement et entretenant des <span class="highlight">relations épanouissantes</span></li>
+                    <li>Atteignant systématiquement vos objectifs, personnels et professionnels</li>
+                    <li>Libéré du poids de votre passé, créant activement le futur que vous méritez</li>
+                </ul>
+                <p>Ce n'est pas un rêve inaccessible. C'est le résultat concret de mon programme de coaching.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Passez à l'action dès maintenant</h2>
+                <p>Vous avez le potentiel d'une vie extraordinaire. Il est temps de le libérer.</p>
+                <a href="#" class="cta-button pulse">RÉSERVER MA CONSULTATION GRATUITE</a>
+                <p>Ne laissez pas un jour de plus s'écouler dans le doute et la frustration. Votre avenir épanoui commence maintenant.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>De multi potentiel submergé à la clarté d'un entrepreneur serein</h2>
+                <p>Êtes-vous un entrepreneur multi passionné, multi potentiel, tiraillé entre vos nombreux talents, mais freiné par des doutes profonds et des schémas autodestructeurs ?</p>
+                <p>Vous avez le potentiel d'une vie extraordinaire, mais ...</p>
+                <ul>
+                    <li>Vous avez l'impression de courir dans tous les sens sans vraiment avancer ?</li>
+                    <li>Vous avez le sentiment d'avoir tout essayé et que rien ne marche ?</li>
+                    <li>Vous avez l'impression que vos concurrents sont plus bêtes que vous et pourtant ils réussissent ?</li>
+                    <li>Vous avez le sentiment d'être incompris, pas respecté à votre juste valeur</li>
+                    <li>Vous avez le sentiment de valoir mieux que ça</li>
+                </ul>
+                <p><span class="highlight">Beaucoup mieux que ça ...</span></p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Vous n'êtes pas seul dans cette lutte</h2>
+                <p>Je comprends parfaitement ce que vous traversez.</p>
+                <p>Et il est grand temps de <span class="highlight">transformer cette tempête intérieure en une force motrice pour votre succès</span>.</p>
+                <p>Vous méritez la vie extraordinaire que d'autres plus bête que vous vivent</p>
+                <p>C'est injuste, vous avez raison</p>
+                <p>Injuste et incompréhensible.</p>
+                <p>Mais il y a une solution, une porte de sortie.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Découvrez une nouvelle approche pour embrasser votre multipotentialité</h2>
+                <p>Mon nom est JC, et ma mission est de vous aider à capitaliser sur votre nature multi passionnée tout en trouvant la clarté et la direction qui vous ont toujours échappé.</p>
+                <p>Avec mon programme JC le catalyseur de clarté, enfin vos clients vous verront tel que vous êtes.</p>
+                <p>Et enfin vos premières ventes.</p>
+                <p>Puis de plus en plus de ventes.</p>
+                <p>Et petit à petit vous atteindrez <span class="highlight">EXACTEMENT la vie de vos rêves</span>.</p>
+                <p>La maison que vous voulez, le pays que vous voulez, les vacances que vous voulez, la femme de vos rêves, les fameux 10k / mois si c'est votre rêve PROFOND</p>
+                <p><span class="highlight">FINI</span> la peur de l'échec (et l'échec tout court d'ailleurs),</p>
+                <p><span class="highlight">FINI</span> les rêves qui n'arrivent jamais.</p>
+                <p><span class="highlight">FINI</span> de travailler 15h par jour pour zéro résultat.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>La vérité sur votre situation actuelle</h2>
+                <p>Vous affichez peut-être une façade de confiance, mais au fond, vous commencez sincèrement à douter de votre capacité à réellement réussir.</p>
+                <p>C'est trop dur, c'est trop long, les résultats n'arrivent pas.</p>
+                <p>Et la réponse est simple,</p>
+                <ul>
+                    <li>Vous ne faites pas ce qu'il faut</li>
+                    <li>Vous ne regardez pas au bon endroit</li>
+                    <li>Et vous n'êtes pas en accord avec vos valeurs PROFONDES.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Ces galères sont votre tremplin vers le succès</h2>
+                <p>Ces galères ne définissent pas qui vous êtes</p>
+                <p>Ni votre succès futur</p>
+                <p>Ni votre réalité de demain.</p>
+                <p>En réalité ses moments de galères ultimes, sont nécessaires, salvateurs.</p>
+                <p>Et je vais même oser, ils sont une <span class="highlight">bénédiction</span> :</p>
+                <p>Ils sont le tremplin vers votre vie de rêve.</p>
+                <p>Pourquoi ?</p>
+                <ul>
+                    <li>Parce que sinon vous n'auriez JAMAIS fait le pas de vous faire accompagner</li>
+                    <li>Parce que sinon vous ne vous seriez JAMAIS posés les bonnes questions</li>
+                    <li>Parce que sinon vous n'auriez JAMAIS progressé</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Il est temps de changer</h2>
+                <p>Arrêtez d'être ce petit mec qui fait semblant que tout va bien mais qui au fond de lui se sent comme une sous-merde,</p>
+                <p>Arrêtez d'être ce mec qui cache ses émotions, qui triche, qui baisse les yeux et qui ne se fait pas respecter</p>
+                <p>Commencez à vous respectez vous-même</p>
+                <p>OK la situation actuelle est dure</p>
+                <p>Mais c'est pas une fin en soi</p>
+                <p>Au contraire, c'est juste le début</p>
+                <p>Et je suis là pour vous aider</p>
+                <p>Sincèrement et profondément</p>
+                <p>Je veux vous voir réussir</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Pourquoi je suis la personne idéale pour vous aider</h2>
+                <p>D'une part parce que je connais <span class="highlight">EXACTEMENT</span> ce que vous ressentez</p>
+                <p>De deux parce que je connais le chemin <span class="highlight">EXACT</span> que vous devez prendre pour vous en sortir</p>
+                <p>De trois parce que je suis une personne profondément humaine et empathique et que je <span class="highlight">VEUX</span> voir mes semblables s'épanouir</p>
+                <p>J'ai vécu tout ça je sais ce que c'est et votre réussite <span class="highlight">RAPIDE</span>, c'est ma revanche personnelle contre la vie qui m'a moi-même broyé de tous les côtés.</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Mon approche unique</h2>
+                <p>Et vous allez le voir ce que je propose c'est</p>
+                <ul>
+                    <li><span class="highlight">SIMPLE</span></li>
+                    <li><span class="highlight">RAPIDE</span></li>
+                    <li><span class="highlight">EFFICACE</span></li>
+                </ul>
+                <p>Personne au monde ne peut faire ce que j'ai fait pour vous et je vais vous expliquer pourquoi</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Qui suis-je ?</h2>
+                <p>Je suis JC, le Catalyseur de Clarté,</p>
+                <p>Et j'aide les multi potentiels en échec comme vous à échapper au sentiment d'être dépassé et à accéder à une vie de clarté absolue, de concentration efficace et de sens profond.</p>
+                <p>Je sais ce que c'est que de jongler avec ses passions, de lutter contre toutes ses envies et de se sentir paralysé par la pression de "choisir une seule chose".</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Ce que mon programme d'accompagnement vous apportera</h2>
+                <p>Grâce à mon programme d'accompagnement, vous aurez enfin les réponses à :</p>
+                <ul>
+                    <li>Quelles sont les causes profondes de vos comportements autodestructeurs et les remplacer par des habitudes stimulantes et durables. (C'est beaucoup plus simple que vous l'imaginez)</li>
+                    <li>Développer une conscience de soi et comprendre enfin ce qui vous motive et vous anime (pour que vous puissiez être full FOCUS sur ce qui doit être accompli).</li>
+                    <li>Élaborer une vision claire de votre avenir et créer une feuille de route pour y parvenir, sans sacrifier vos passions.</li>
+                    <li>Mettre en place des systèmes de réussite durables qui rationalisent votre travail, éliminent les distractions et libèrent votre énergie mentale pour ce qui compte vraiment.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Témoignage client</h2>
+                <div class="testimonial">
+                    <p>"Je me souviens de Marc, un entrepreneur talentueux qui jonglait avec 3 projets à la fois. Il travaillait 12h par jour, épuisé, sans jamais avoir de résultats concrets. Il était à deux doigts d'abandonner quand il a décidé de me faire confiance. Aujourd'hui, il gère une entreprise florissante, en accord avec ses passions, et travaille seulement 4 heures par jour."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Mon approche unique combine :</h2>
+                <ul>
+                    <li>L'identification et le traitement des causes profondes de votre auto-sabotage</li>
+                    <li>Le développement d'une conscience de soi aiguë pour des prises de décision éclairées</li>
+                    <li>Des stratégies concrètes pour changer vos habitudes et atteindre vos objectifs</li>
+                    <li>Un soutien continu et une responsabilisation pour assurer votre progression</li>
+                    <li>La guérison des blessures du passé qui entravent votre épanouissement actuel</li>
+                </ul>
+            </div>
+        </section>
+        
+
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Prêt à commencer ?</h2>
+                <p>Si vous êtes comme moi et que les pages de vente interminable vous cassent la tête cliquez ici pour connaître directement les prix et réserver votre premier appel de découverte gratuit</p>
+                <a href="#" class="cta-button pulse">Prends ton appel clarté</a>
+                <a href="#" class="cta-button">Découvre les prix</a>
+                <p>Et pour tous les autre qui veulent en savoir plus et comprends ce qui se cache derrière mon accompagnement "JC le catalyseur de clarté" je vous invite à lire ce qui suit</p>
+            </div>
+        </section>
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Ok, transformation personnelle ok  professionnelle ok ... !!</h2>
+                <p>MAIS COMMENT se passe l'accompagnement de JC le catalyseur de clarté ? </p>
+                <p>Voyons tout ça ensemble</p>
+            </div>
+        </section>
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Comprendre d'où vous venez</h2>
+                <p>Imaginez le petit garçon que vous étiez, cherchant désespérément l'approbation d'un père distant ou essayant de protéger une mère submergée. Peut-être avez-vous grandi dans une maison où :</p>
+                <ul>
+                    <li>L'expression de vos émotions était considérée comme un signe de faiblesse</li>
+                    <li>Vos multiples intérêts étaient vus comme un manque de concentration plutôt que comme une force</li>
+                    <li>Les attentes irréalistes vous ont poussé à chercher constamment la perfection</li>
+                    <li>L'instabilité émotionnelle vous a forcé à devenir le "gardien de la paix" de la famille</li>
+                </ul>
+                <p>Ces expériences ont façonné l'homme que vous êtes aujourd'hui - talentueux, résilient, mais portant un lourd fardeau émotionnel.</p>
+                <p>En en parlant avec un professionnel 80% des problématiques deviennent claires et en comprenant les problématiques on peut travailler dessus</p>
+                <p class="italic">"Ce qui se conçoit bien s'énonce clairement et les mots pour le dire viennent aisément"</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Votre réalité actuelle : Submergé et insatisfait</h2>
+                <p>Aujourd'hui, vous vous retrouvez :</p>
+                <ul>
+                    <li>Paralysé par la peur de l'échec, reportant constamment les décisions importantes</li>
+                    <li>Épuisé par le syndrome de l'imposteur, doutant de vos compétences malgré vos réussites</li>
+                    <li>Frustré par votre incapacité à choisir une seule voie, vous sentant comme un "touche-à-tout, maître de rien"</li>
+                    <li>Enchaîné à des relations toxiques, répétant les schémas de votre enfance</li>
+                    <li>Surmené mais sous-productif, courant dans tous les sens sans vraiment avancer</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>L'approche de JC le catalyseur de clarté</h2>
+                <p>Prioriser les tâches, enlever le superflu, aller à la racine de vos blocages et nourrir vos ambitions profondes</p>
+                <p>Vous avez essayé :</p>
+                <ul>
+                    <li>Des livres de développement personnel qui sonnent bien mais ne mènent nulle part</li>
+                    <li>Des applications de productivité qui finissent par collecter la poussière numérique</li>
+                    <li>Des retraites de méditation qui vous apaisent temporairement mais ne résolvent pas vos problèmes de fond</li>
+                    <li>Des conseillers bien intentionnés qui ne comprennent pas vraiment la complexité de votre situation</li>
+                </ul>
+                <p>Malgré tous vos efforts, vous vous sentez toujours bloqué, frustré et loin de votre véritable potentiel.</p>
+                <p>Et c'est exactement là-dessus qu'on va travailler !</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>JC le catalyseur de clarté : Je vous accompagne sur Votre chemin vers la clarté et la réalisation de votre moi profond</h2>
+                <p>Je suis JC, et croyez-moi, je comprends profondément vos luttes.</p>
+                <p>J'ai moi-même été confronté à ce sentiment d'éparpillement et d'insatisfaction.</p>
+                <p>J'ai connu le succès entrepreneurial notamment en créant "Monsieur YOLO", une entreprise de pizzerias qui m'a rapporté beaucoup d'argent,</p>
+                <p>Cela m'a permis de vivre confortablement pendant plusieurs années sans avoir à travailler.</p>
+                <p>J'ai créé des festivals de musique avec des dizaines milliers de participants, enseigné les mathématiques et même la trompette, faisant preuve d'empathie, de leadership et de patience.</p>
+                <p>Pourtant, derrière ces réussites, je me sentais profondément insatisfait.</p>
+                <p>Marqué par une enfance étouffante auprès d'un père autoritaire et contrôlant, je portais un poids invisible. Pendant 15 ans, j'ai cherché des réponses, dépensant des milliers d'euros en coaching, thérapie, retraites spirituelles, livres de développement personnel...</p>
+                <p>J'ai tout essayé, j'ai cherché des réponses partout : de la psychanalyse à l'hypnose, en passant par les retraites silencieuses.</p>
+                <p>Mais rien n'y fait, j'avais l'impression de revivre cet enfer à l'intérieur de moi-même en permanence</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>La solution</h2>
+                <p>Puis, j'ai réalisé que la solution ne se trouvait pas à l'extérieur, mais en moi. J'ai passé des années à assembler les pièces du puzzle, à expérimenter, à apprendre de mes erreurs et de mes succès pour finalement créer ma propre méthode, "JC le Catalyseur de Clarté", une approche unique et puissante qui a changé ma vie et celle de centaines de personnes.</p>
+                <p><span class="highlight">BREF La seule chose qui fonctionnait est de tout réapprendre à la base</span></p>
+                <ul>
+                    <li>CORPS</li>
+                    <li>AME</li>
+                    <li>ESPRIT</li>
+                </ul>
+                <p>Il faut tout re-synchroniser</p>
+                <p>Avancer pas à pas et faire ce qu'il faut, quand il le faut.</p>
+                <p>Apprendre à gérer ses attentes et à se concentrer sur le moment présent.</p>
+                <p>C'est exactement ce que je vous propose avec le programme JC le catalyseur de clarté</p>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Ce que je vous offre aujourd'hui</h2>
+                <p>Aujourd'hui, je mets cette expérience et cette sagesse à votre service. Grâce à mon programme de coaching éprouvé, je vous donnerai les moyens de :</p>
+                <ul>
+                    <li>Découvrir les causes profondes de vos comportements autodestructeurs et les remplacer par des habitudes stimulantes et durables.</li>
+                    <li>Développer une conscience de soi inébranlable et enfin comprendre ce qui vous motive (pour que vous puissiez arrêter de douter de chacun de vos mouvements).</li>
+                    <li>Élaborer une vision claire de votre avenir et créer une feuille de route concrète pour y parvenir, sans sacrifier vos passions.</li>
+                    <li>Mettre en place des systèmes de réussite durables qui rationalisent votre travail, éliminent les distractions et libèrent votre énergie mentale pour ce qui compte vraiment.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="container">
+                <h2>Témoignages</h2>
+                <div class="testimonial">
+                    <p>"Travailler avec JC a été une véritable transformation. J'ai enfin l'impression d'avoir la permission d'être moi-même et de poursuivre toutes mes passions sans m'épuiser. Je suis plus productif, plus rentable et, surtout, plus heureux que jamais." - [Nom du client]</p>
+                </div>
+                <div class="testimonial">
+                    <p>"JC m'a aidé à découvrir la racine de mes comportements autodestructeurs et m'a fourni des stratégies pratiques pour les surmonter. J'ai maintenant une vision claire et un plan solide pour atteindre mes objectifs. Le soutien continu et la responsabilisation ont été inestimables." - [Nom du client]</p>
+                </div>
+            </div>
+        </section>
+        <div class="offres">
+            <div class="offre">
+                <div class="offre-header">
+                    <h3 class="offre-titre">L'Appel Déclic</h3>
+                    <div class="offre-prix">100€</div>
+                </div>
+                <div class="offre-contenu">
+                    <ul class="offre-liste">
+                        <li>60 minutes d'échange intense</li>
+                        <li>Identification des blocages</li>
+                        <li>Plan d'action sur 30 jours</li>
+                    </ul>
+                    <a href="#" class="offre-cta">Réserver</a>
+                </div>
+            </div>
+            
+            <div class="offre offre-populaire">
+                <div class="offre-header">
+                    <h3 class="offre-titre">Pack Clarté</h3>
+                    <div class="offre-prix">240€</div>
+                </div>
+                <div class="offre-contenu">
+                    <ul class="offre-liste">
+                        <li>4 appels de 60 minutes</li>
+                        <li>Suivi par email</li>
+                        <li>Transformation en profondeur</li>
+                    </ul>
+                    <a href="#" class="offre-cta">Choisir</a>
+                </div>
+            </div>
+            
+            <div class="offre">
+                <div class="offre-header">
+                    <h3 class="offre-titre">Accompagnement Personnalisé</h3>
+                    <div class="offre-prix">Sur devis</div>
+                </div>
+                <div class="offre-contenu">
+                    <ul class="offre-liste">
+                        <li>Programme sur mesure</li>
+                        <li>Accompagnement illimité</li>
+                        <li>Ressources exclusives</li>
+                    </ul>
+                    <a href="#" class="offre-cta">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 JC le catalyseur de clarté. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const fadeElems = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            
+            fadeElems.forEach(elem => {
+                observer.observe(elem);
+            });
+        });
+    </script>
+</body>
+</html>
